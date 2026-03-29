@@ -1,0 +1,168 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+
+const metadata = {
+  title: 'Jasa Pencucian Pipa Air Bersih Karawang | Solusi Air Kuning & Berlumut',
+  ignoreTitleTemplate: true,
+  description:
+    'Air kran di rumah kuning, bau, atau berlumut? Saya melayani jasa cuci pipa air bersih (flushing) di Karawang tanpa bahan kimia berbahaya. Segarkan kembali air rumah Anda!',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Sanitasi Air Terpercaya"
+    title="Jasa Pencucian Pipa Air Bersih Karawang: Kembalikan Kesegaran Air Anda"
+    subtitle="Pipa air bersih yang tidak pernah dicuci selama bertahun-tahun akan membentuk biofilm, lumut, dan kerak karat. Saya hadir dengan teknologi pembersihan pipa tanpa bongkar untuk menjamin aliran air rumah Anda tetap higienis."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Konsultasi Air Bersih (WA)',
+        href: 'https://wa.me/628123456789012',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/layanan-saluran-mampet.webp',
+      alt: 'Proses kerja teknisi sanitasi',
+    }}
+  />
+
+  <Features
+    id="tanda"
+    tagline="Cek Kondisi"
+    title="Tanda Pipa Air Bersih Anda Perlu Dicuci Segera"
+    subtitle="Jangan tunggu sampai keluarga Anda mengalami gatal-gatal atau masalah kulit akibat air yang terkontaminasi."
+    items={[
+      {
+        title: 'Debit Air Mengecil',
+        description: 'Sumbatan kerak di dalam pipa membuat aliran air ke shower atau wastafel menjadi sangat lemah.',
+        icon: 'tabler:droplet-half-2-filled',
+      },
+      {
+        title: 'Air Berwarna & Berbau',
+        description: 'Air tampak keruh, kuning, atau berbau tanah/logam saat kran pertama kali dibuka di pagi hari.',
+        icon: 'tabler:flask',
+      },
+      {
+        title: 'Muncul Endapan Hitam/Kuning',
+        description: 'Adanya serpihan hitam atau kerak kuning yang menyumbat filter kran atau jet shower.',
+        icon: 'tabler:filter',
+      },
+      {
+        title: 'Iritasi Kulit & Mata',
+        description:
+          'Keluarga mulai mengeluh gatal-gatal setelah mandi atau mata terasa perih akibat kontaminasi bakteri dalam pipa.',
+        icon: 'tabler:alert-triangle',
+      },
+    ]}
+  />
+
+  <Content
+    tagline="Teknologi Kami"
+    title="Metode Flushing Pipa Tanpa Bahan Kimia"
+    subtitle="Kami mengutamakan keamanan kesehatan keluarga Anda dengan tidak menggunakan zat asam berbahaya."
+    items={[
+      {
+        title: 'Hydro-Dynamic Cleaning',
+        description:
+          'Menggunakan kombinasi tekanan air dan udara yang terkontrol untuk merontokkan kerak di dinding pipa.',
+      },
+      {
+        title: 'Pembersihan Toren Gratis',
+        description:
+          'Dalam paket pencucian pipa tertentu, kami juga memberikan layanan kuras toren agar sumber air kembali bersih.',
+      },
+      {
+        title: 'Food Grade & Aman',
+        description:
+          'Kami menjamin tidak ada residu berbahaya yang tersisa, sehingga air bisa langsung digunakan untuk kebutuhan domestik.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1521207418485-99c705420785?auto=format&fit=crop&w=1740&q=80',
+      alt: 'Proses flushing pipa air bersih bertekanan',
+    }}
+  />
+
+  <Steps
+    title="Prosedur Cuci Pipa Higienis"
+    items={[
+      {
+        title: 'Sterilisasi Sumber Air',
+        description:
+          'Menutup aliran utama dan memastikan toren dalam kondisi bersih sebelum proses pencucian pipa dimulai.',
+        icon: 'tabler:lock',
+      },
+      {
+        title: 'Pencucian Per Jalur (Flushing)',
+        description: 'Melakukan pembersihan pipa satu per satu, dari jalur dapur, kamar mandi, hingga area cuci jemur.',
+        icon: 'tabler:current-location',
+      },
+      {
+        title: 'Pembuangan Limbah Kerak',
+        description: 'Memastikan semua kotoran keluar melalui kran pembuangan hingga air benar-benar jernih.',
+        icon: 'tabler:trash',
+      },
+      {
+        title: 'Verifikasi & Uji Kejernihan',
+        description: 'Pengecekan akhir bersama pelanggan untuk memastikan air sudah tidak berbau dan mengalir deras.',
+        icon: 'tabler:circle-check',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="FAQ: Jasa Cuci Pipa Karawang"
+    subtitle="Segala hal yang perlu Anda ketahui tentang perawatan instalasi air bersih."
+    items={[
+      {
+        title: 'Apakah pencucian pipa bisa membuat pipa pecah?',
+        description:
+          'Tidak. Kami menggunakan alat dengan tekanan yang dapat diatur sesuai dengan usia dan jenis pipa (PVC/Galvanis) Anda.',
+      },
+      {
+        title: 'Berapa lama sekali pipa air bersih harus dicuci?',
+        description:
+          'Untuk wilayah Karawang dengan kadar zat besi tinggi, sangat disarankan melakukan pencucian pipa setiap 1-2 tahun sekali.',
+      },
+      {
+        title: 'Apakah melayani wilayah di luar Karawang Kota?',
+        description:
+          'Ya, saya melayani area Karawang Barat, Timur, Klari, Kosambi, Telukjambe, hingga area Cikampek dan Kotabaru.',
+      },
+      {
+        title: 'Apakah air bisa langsung digunakan setelah dicuci?',
+        description:
+          'Ya. Setelah proses pembersihan kerak dan pembilasan menyeluruh selesai, air di seluruh titik kran rumah Anda dapat langsung digunakan kembali dengan normal.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Pesan Jasa Cuci Pipa',
+        href: 'https://wa.me/628123456789012',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Air Rumah Anda Kuning & Berbau? <br /><span class="text-blue-600 dark:text-blue-400">Cuci Pipanya Sekarang!</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Jangan biarkan kesehatan keluarga terancam oleh air yang kotor. Hubungi ahlinya di Karawang untuk layanan
+      pencucian pipa profesional dan bergaransi.
+    </Fragment>
+  </CallToAction>
+</Layout>

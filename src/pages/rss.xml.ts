@@ -1,5 +1,4 @@
 import { getRssString } from '@astrojs/rss';
-
 import { SITE, METADATA, APP_BLOG } from 'astrowind:config';
 import { fetchPosts } from '~/utils/blog';
 import { getPermalink } from '~/utils/permalinks';
@@ -15,20 +14,22 @@ export const GET = async () => {
   const posts = await fetchPosts();
 
   const rss = await getRssString({
-    title: SITE.name || 'Jasa Saluran Mampet Karawang',
-    description: METADATA?.description || 'Layanan Ahli Saluran Mampet Karawang Bergaransi',
-    
-    // Gunakan URL absolut yang valid
-    site: import.meta.env.SITE || SITE.site || 'https://jasasaluranmampetkarawang.id',
+    title: `${SITE.name}’s Blog`,
+    description: METADATA?.description || '',
+    // PERBAIKAN: Gunakan SITE.site dari konfigurasi AstroWind
+    site: SITE.site,
 
-    items: posts.map((post) => ({
-      link: getPermalink(post.permalink, 'post'),
-      title: post.title || '',
-      description: post.excerpt || '',
-      pubDate: post.publishDate ? new Date(post.publishDate) : new Date(),
-      customData: post.category ? `<category>${post.category}</category>` : '',
-    })),
+    items: posts.map((post) => {
+      const permalink = getPermalink(post.permalink, 'post');
+      return {
+        link: permalink, // getPermalink sudah menangani trailingSlash secara otomatis di AstroWind
+        title: post.title,
+        description: post.excerpt,
+        pubDate: post.publishDate,
+      };
+    }),
 
+    customData: `<language>${SITE.language || 'id-id'}</language>`,
     trailingSlash: SITE.trailingSlash,
   });
 

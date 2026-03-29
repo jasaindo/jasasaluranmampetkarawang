@@ -1,0 +1,146 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Jasa Sedot Septic Tank Karawang | Layanan Profesional & Higienis',
+  ignoreTitleTemplate: true,
+  description:
+    'Layanan penyedotan septic tank profesional di Karawang. Melayani pembersihan limbah domestik, pengurasan bak penampungan, dan perbaikan saluran mampet. Higienis dan tuntas!',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Layanan Sanitasi Terpercaya"
+    title="Jasa Penyedotan Septic Tank Profesional di Karawang"
+    subtitle="Jangan tunggu meluap! Jaga kesehatan keluarga dengan pengurasan septic tank rutin. Layanan cepat, bersih, dan sesuai standar lingkungan untuk wilayah Karawang dan sekitarnya."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Hubungi Sekarang (WhatsApp)',
+        href: 'https://wa.me/628123456789012',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+      { text: 'Lihat Galeri Kerja', href: '/galeri' },
+    ]}
+    image={{
+      src: '~/assets/images/layanan-saluran-mampet.webp',
+      alt: 'Layanan Sedot WC Profesional Karawang',
+    }}
+  />
+
+  <Features
+    id="features"
+    tagline="Edukasi Kesehatan"
+    title="Mengapa Septic Tank Wajib Dikuras Rutin?"
+    subtitle="Banyak warga Karawang mengabaikan septic tank hingga terjadi luapan. Padahal, pemeliharaan rutin adalah kunci lingkungan sehat."
+    items={[
+      {
+        title: 'Mencegah Pencemaran Air Tanah',
+        description:
+          'Septic tank yang penuh berisiko bocor dan mencemari sumur bor dengan bakteri E. Coli, terutama di pemukiman padat Klari dan Telukjambe.',
+        icon: 'tabler:droplet-half-2',
+      },
+      {
+        title: 'Menghindari Bau Tak Sedap',
+        description:
+          'Gas metana dan H2S dari limbah yang menumpuk bisa masuk ke dalam rumah melalui pipa wastafel jika aliran udara tersumbat.',
+        icon: 'tabler:wind',
+      },
+      {
+        title: 'Menjaga Umur Pakai Saluran',
+        description:
+          'Limbah padat yang masuk ke pipa pembuangan akibat septic tank penuh akan mengakibatkan sumbatan permanen yang mahal perbaikannya.',
+        icon: 'tabler:settings',
+      },
+    ]}
+  />
+
+  <Content
+    isReversed
+    tagline="Info Penting"
+    title="Pahami Perbedaan: Sedot WC vs Pelancaran Saluran"
+    items={[
+      {
+        title: 'Sedot Septic Tank',
+        description: 'Proses pengosongan bak penampungan limbah utama yang sudah penuh atau mengeras.',
+      },
+      {
+        title: 'Pelancaran Saluran Mampet',
+        description: 'Pembersihan pipa yang tersumbat benda asing atau lemak menggunakan mesin Spiral Rooter.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1542013936693-884638332954?auto=format&fit=crop&w=800&q=80',
+      alt: 'Teknisi sedang mengecek bak kontrol',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Diagnosa Tepat, Biaya Hemat</h3>
+      Di Karawang, saya sering menemui pelanggan yang menyangka septic tank-nya penuh, padahal hanya salurannya yang mampet.
+      Tim kami akan melakukan pengecekan menyeluruh agar Anda tidak membayar layanan yang tidak perlu.
+    </Fragment>
+  </Content>
+
+  <Steps
+    title="Prosedur Kerja Higienis Kami"
+    items={[
+      {
+        title: 'Langkah 1: Diagnosa Lokasi',
+        description:
+          'Teknisi kami mencari lokasi septic tank dan mengecek volume limbah di dalamnya menggunakan alat ukur khusus.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Langkah 2: Penyedotan Vakum',
+        description:
+          'Menggunakan armada truk tangki dengan pompa vakum bertenaga besar untuk menyedot limbah padat dan cair secara tuntas.',
+        icon: 'tabler:truck',
+      },
+      {
+        title: 'Langkah 3: Pembersihan Sisa Kerak',
+        description:
+          'Jika diperlukan, kami melakukan metode "tembak" (flushing) untuk menghancurkan limbah yang sudah membatu di dasar bak.',
+        icon: 'tabler:wash-dryclean',
+      },
+      {
+        title: 'Langkah 4: Verifikasi & Penutupan',
+        description:
+          'Memastikan aliran dari toilet lancar kembali dan menutup rapat bak penampungan seperti semula tanpa sisa kotoran di area kerja.',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/pelancaran-saluran-kamar-mandi-2.webp',
+      alt: 'Proses kerja teknisi sanitasi',
+    }}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Pesan Jasa Sedot WC',
+        href: 'https://wa.me/628123456789012',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Septic Tank Mulai Meluap? <br class="block sm:hidden" /><span class="text-blue-600 dark:text-blue-400"
+        >Jangan Tunda!</span
+      >
+    </Fragment>
+    <Fragment slot="subtitle">
+      Layanan cepat 24 Jam untuk wilayah Karawang Barat, Karawang Timur, Klari, Telukjambe, hingga Cikampek. Biaya
+      transparan tanpa biaya tambahan tersembunyi.
+    </Fragment>
+  </CallToAction>
+</Layout>

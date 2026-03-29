@@ -1,7 +1,5 @@
 import slugify from 'limax';
-
 import { SITE, APP_BLOG } from 'astrowind:config';
-
 import { trim } from '~/utils/utils';
 
 export const trimSlash = (s: string) => trim(trim(s, '/'));
@@ -22,14 +20,14 @@ export const cleanSlug = (text = '') =>
     .map((slug) => slugify(slug))
     .join('/');
 
-export const BLOG_BASE = cleanSlug(APP_BLOG?.list?.pathname);
-export const CATEGORY_BASE = cleanSlug(APP_BLOG?.category?.pathname);
+// SINKRONISASI: Paksa kosong jika Anda tidak ingin prefix di list
+export const BLOG_BASE = cleanSlug(APP_BLOG?.list?.pathname || '');
+export const CATEGORY_BASE = cleanSlug(APP_BLOG?.category?.pathname || '');
 export const TAG_BASE = cleanSlug(APP_BLOG?.tag?.pathname) || 'tag';
 
-/** * MODIFIKASI: Menghapus BLOG_BASE dari pattern default agar 
- * post langsung berada di root (/%slug%)
+/** * MODIFIKASI: Pastikan pattern post hanya %slug%
  */
-export const POST_PERMALINK_PATTERN = trimSlash(APP_BLOG?.post?.permalink || `%slug%`);
+export const POST_PERMALINK_PATTERN = trimSlash(APP_BLOG?.post?.permalink || '%slug%');
 
 /** */
 export const getCanonical = (path = ''): string | URL => {
@@ -78,11 +76,11 @@ export const getPermalink = (slug = '', type = 'page'): string => {
       break;
 
     /**
-     * MODIFIKASI: Memastikan tipe 'post' hanya mengambil slugnya saja 
-     * tanpa menambahkan BLOG_BASE (prefix /blog/)
+     * PERBAIKAN: Tipe 'post' harus langsung ke root.
+     * Kami tidak menggunakan BLOG_BASE di sini.
      */
     case 'post':
-      permalink = createPath(trimSlash(slug));
+      permalink = trimSlash(slug);
       break;
 
     case 'page':
@@ -108,11 +106,15 @@ export const getAsset = (path: string): string =>
     .filter((el) => !!el)
     .join('/');
 
-/** */
-const definitivePermalink = (permalink: string): string => createPath(BASE_PATHNAME, permalink);
+/** * PERBAIKAN: Definitive permalink harus cerdas. 
+ * Jika permalink untuk post, jangan biarkan ada folder tambahan.
+ */
+const definitivePermalink = (permalink: string): string => {
+  return createPath(BASE_PATHNAME, permalink);
+};
 
 /** */
-export const applyGetPermalinks = (menu: object = {}) => {
+export const applyGetPermalinks = (menu: any = {}) => {
   if (Array.isArray(menu)) {
     return menu.map((item) => applyGetPermalinks(item));
   } else if (typeof menu === 'object' && menu !== null) {

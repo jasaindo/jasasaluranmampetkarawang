@@ -1,69 +1,269 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
-import BlogList from '~/components/blog/List.astro';
-import Headline from '~/components/blog/Headline.astro';
-import { fetchPosts } from '~/utils/blog';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
-export const prerender = true;
-
-// Sinkronisasi Data: Mengambil semua artikel dari content/post
-const posts = await fetchPosts();
-// Batasi tampilan di Home (misal 6 artikel) agar tidak terlalu panjang
-const postsToDisplay = posts.slice(0, 6); 
+// SSOT Path untuk Image LCP
+const heroImagePath = '~/assets/images/hero-image.webp';
 
 const metadata = {
-  title: 'Jasa Saluran Mampet Karawang - Tukang No. 1 Bergaransi',
-  description: 'Solusi ahli saluran mampet, sedot tinja, dan perbaikan pipa di Karawang tanpa bongkar.',
+  title: 'Jasa Saluran Mampet Karawang - Ahli Pipa Tersumbat & WC Tanpa Bongkar',
   ignoreTitleTemplate: true,
+  description:
+    'Jasa saluran mampet Karawang 24 jam. Ahli wastafel macet, WC mampet, & pipa industri di KIIC, Galuh Mas, Telukjambe. Murah, Bergaransi, & Tanpa Bongkar!',
+  ogType: 'website',
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'PlumbingService',
+  name: 'Jasa Saluran Mampet Karawang Tanpa Bongkar',
+  description:
+    'Solusi ahli pelancaran saluran air, Sedot WC Karawang, dan pipa mampet tanpa bongkar di seluruh wilayah Karawang.',
+  url: 'https://jasasaluranmampetkarawang.web.id',
+  telephone: '+628123456789012',
+  priceRange: 'Rp',
+  image: 'https://jasasaluranmampetkarawang.web.id/_astro/hero-image.webp',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Jl. Raya Karawang',
+    addressLocality: 'Karawang',
+    addressRegion: 'Jawa Barat',
+    postalCode: '41311',
+    addressCountry: 'ID',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: -6.3227,
+    longitude: 107.2731,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    opens: '00:00',
+    closes: '23:59',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Karawang' },
+    { '@type': 'City', name: 'Telukjambe' },
+    { '@type': 'City', name: 'Klari' },
+    { '@type': 'City', name: 'Cikampek' },
+  ],
 };
 ---
 
 <Layout metadata={metadata}>
-  {/* 1. Bagian Hero Tetap Dipertahankan */}
+  <Fragment slot="head">
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://jasasaluranmampetkarawang.web.id" />
+    
+    {/* TAMBALAN KRITIKAL: Preload dengan fetchpriority tinggi untuk menekan LCP */}
+    <link rel="preload" as="image" href={heroImagePath} fetchpriority="high" />
+  </Fragment>
+
   <Hero
     actions={[
-      { variant: 'primary', text: 'Hubungi Kami', href: 'https://wa.me/628123456789', icon: 'tabler:brand-whatsapp' },
-      { text: 'Lihat Layanan', href: '#features' },
+      {
+        variant: 'primary',
+        text: 'Hubungi via WhatsApp',
+        href: 'https://wa.me/628123456789012',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+      { text: 'Layanan Kami', href: '#features' },
     ]}
-    image={{ src: '~/assets/images/default.jpg', alt: 'Jasa Saluran Mampet Karawang' }}
+    image={{
+      src: heroImagePath,
+      alt: 'Ahli Jasa Saluran Mampet Karawang Tanpa Bongkar Profesional',
+      loading: 'eager',     // Memaksa browser memuat secepat mungkin
+      fetchpriority: 'high', // Astro 5 Native fetch priority
+      decoding: 'sync',      // Untuk LCP, sync lebih cepat muncul di layar daripada async
+      widths: [400, 768, 1024],
+    }}
   >
     <Fragment slot="title">
-      Solusi Cepat <span class="text-accent dark:text-white highlight">Saluran Mampet</span> di Karawang
-    </Fragment>
-    <Fragment slot="subtitle">
-      Ahli pipa tersumbat, sedot WC, dan perbaikan saluran air dengan alat modern tanpa bongkar. Melayani wilayah Karawang, Cikampek, hingga Rengasdengklok.
+      Jasa <span class="text-accent dark:text-white">Saluran Mampet</span> Karawang
+      <span class="block text-3xl">Anti Pipa Tersumbat</span>
+      <span class="block text-2xl sm:text-3xl">Spesialis WC Tanpa Bongkar</span>
     </Fragment>
   </Hero>
 
-  {/* 2. Bagian Layanan / Features */}
+  <Note
+    title="Komitmen Layanan:"
+    description="Teknisi Berpengalaman, Alat Rooter Modern, Tanpa Bahan Kimia Korosif, dan Garansi Uang Kembali."
+  />
+
   <Features
     id="features"
-    title="Layanan Unggulan Kami"
+    tagline="Layanan Unggulan"
+    title="Solusi Profesional Masalah Perpipaan"
+    subtitle="Kami adalah spesialis drainase untuk hunian, komersial Galuh Mas, hingga fasilitas industri KIIC Karawang."
     items={[
-      { title: 'Saluran Wastafel', description: 'Mengatasi wastafel mampet akibat lemak dan sisa makanan.', icon: 'tabler:droplet' },
-      { title: 'Pipa Kamar Mandi', description: 'Melancarkan pembuangan air kamar mandi yang tergenang.', icon: 'tabler:tool' },
-      { title: 'Sedot Septic Tank', description: 'Layanan sedot tinja bersih dan tuntas.', icon: 'tabler:truck' },
+      {
+        title: 'Pelancaran WC & Kloset',
+        description: 'Mengatasi sumbatan tinja atau benda asing pada kloset dengan mesin spiral fleksibel tanpa merusak pipa.',
+        icon: 'tabler:droplet-filled',
+      },
+      {
+        title: 'Wastafel & Kitchen Sink',
+        description: 'Pembersihan kerak lemak membatu pada pipa dapur restoran dan rumah tangga di Karawang.',
+        icon: 'tabler:tools',
+      },
+      {
+        title: 'Floor Drain Kamar Mandi',
+        description: 'Evakuasi sumbatan rambut dan sisa sabun yang mengendap di pipa pembuangan lantai secara tuntas.',
+        icon: 'tabler:wash-machine',
+      },
+      {
+        title: 'Kuras Septic Tank Karawang',
+        description: 'Layanan sedot tinja higienis dengan armada tangki modern untuk wilayah Karawang Timur hingga Barat.',
+        icon: 'tabler:truck',
+      },
+      {
+        title: 'Cleaning Pipa Air Bersih',
+        description: 'Rontokkan lumut dan kerak pipa air bersih agar debit air keran Anda kembali kencang.',
+        icon: 'tabler:adjustments-horizontal',
+      },
+      {
+        title: 'Emergency Service 24 Jam',
+        description: 'Layanan darurat kapan saja. Tim teknisi kami standby untuk area Telukjambe dan Klari.',
+        icon: 'tabler:clock',
+      },
     ]}
   />
 
-  {/* 3. Penggabungan Logika blog.astro ke dalam Index */}
-  <section class="px-6 py-12 sm:px-6 lg:px-8 lg:py-20 mx-auto max-w-4xl">
-    <Headline
-      subtitle="Dapatkan edukasi seputar perawatan saluran air langsung dari ahlinya di Karawang."
-    >
-      Artikel Jasa Saluran Mampet Terbaru
-    </Headline>
-    
-    {/* Menggunakan BlogList agar tampilan rapi seperti halaman blog asli */}
-    <BlogList posts={postsToDisplay} />
-    
-    {/* Tombol Lihat Semua Artikel (Opsional jika ingin ke halaman list lain) */}
-    {posts.length > 6 && (
-       <div class="flex justify-center mt-8">
-          <a href="/edukasi" class="btn btn-primary">Lihat Semua Artikel</a>
-       </div>
-    )}
-  </section>
+  <Features2
+    title="Cakupan Area Layanan di Kabupaten Karawang"
+    subtitle="Tim kami tersebar di titik strategis untuk respon cepat kurang dari 60 menit."
+    items={[
+      { title: 'Kecamatan Klari', description: 'Area Kosambi, Pancawati, dan perumahan raya Klari.', icon: 'tabler:map-pin' },
+      { title: 'Telukjambe Timur', description: 'Galuh Mas, Grand Taruma, Resinda, dan ruko komersial.', icon: 'tabler:map-pin' },
+      { title: 'Karawang Barat', description: 'Pusat kota, perkantoran, dan pemukiman Karawang Kota.', icon: 'tabler:map-pin' },
+      { title: 'Karawang Timur', description: 'Johar, Palumbonsari, hingga area industri kecil.', icon: 'tabler:map-pin' },
+      { title: 'Cikampek & Kotabaru', description: 'Layanan sedot tinja area gerbang tol Cikampek.', icon: 'tabler:map-pin' },
+      { title: 'KIIC & Suryacipta', description: 'Maintenance drainase skala besar untuk pabrik dan gudang.', icon: 'tabler:map-pin' },
+      { title: 'Ciampel (KIM)', description: 'Pembersihan saluran limbah domestik industri KIM.', icon: 'tabler:map-pin' },
+      { title: 'Rengasdengklok', description: 'Kuras septic tank dan pelancaran got Karawang Utara.', icon: 'tabler:map-pin' },
+    ]}
+  />
+
+  <Content
+    isReversed
+    tagline="Metode Kerja"
+    title="Mengapa Memilih Teknologi Rooter Kami?"
+    items={[
+      {
+        title: 'Sistem Spiral Baja (Rooter)',
+        description: 'Menghancurkan sumbatan paling keras tanpa perlu membongkar lantai atau menggali pipa.',
+      },
+      {
+        title: 'Keamanan Pipa Terjamin',
+        description: 'Tanpa penggunaan soda api yang bisa membuat pipa PVC melenting atau pecah.',
+      },
+      {
+        title: 'Transparansi Biaya',
+        description: 'Sistem harga borongan per titik yang disepakati di awal tanpa biaya siluman.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/kelebihan-jasa-saluran-mampet-karawang.png',
+      alt: 'Teknologi Mesin Rooter Saluran Mampet Karawang Modern',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Investasi Hemat Jangka Panjang</h3>
+      Metode pengerjaan kami mengedepankan efisiensi waktu agar aktivitas rumah tangga Anda kembali normal.
+    </Fragment>
+  </Content>
+
+  <Steps
+    title="Prosedur Pemesanan Jasa Kami"
+    items={[
+      {
+        title: 'Konsultasi Masalah',
+        description: 'Hubungi admin via WhatsApp, kirimkan foto atau video kendala saluran mampet Anda.',
+        icon: 'tabler:phone-call',
+      },
+      {
+        title: 'Pengerjaan di Lokasi',
+        description: 'Teknisi datang dengan peralatan lengkap. Proses pengerjaan tuntas dalam 1-2 jam.',
+        icon: 'tabler:truck-delivery',
+      },
+      {
+        title: 'Pengecekan Akhir (QC)',
+        description: 'Tes aliran air bersama pelanggan. Pembayaran dilakukan setelah lancar sempurna.',
+        icon: 'tabler:thumb-up',
+      },
+      {
+        title: 'Selesai & Bergaransi',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/cara-pesan.png',
+      alt: 'Prosedur Layanan Jasa Saluran Mampet Karawang',
+    }}
+  />
+
+  <FAQs
+    title="FAQ - Seputar Layanan"
+    subtitle="Informasi penting mengenai jasa pelancaran pipa di Karawang."
+    items={[
+      {
+        title: 'Apakah benar tanpa bongkar keramik?',
+        description: 'Benar. 99% kasus kami selesaikan menggunakan mesin Rooter dari lubang pembuangan.',
+      },
+      {
+        title: 'Apakah melayani panggilan malam hari?',
+        description: 'Ya, kami melayani layanan darurat 24 jam untuk area Telukjambe dan Karawang Kota.',
+      },
+      {
+        title: 'Berapa lama masa garansinya?',
+        description: 'Kami memberikan garansi pengerjaan ulang gratis jika saluran kembali mampet.',
+      },
+      {
+        title: 'Metode pembayaran apa yang tersedia?',
+        description: 'Pembayaran tunai di lokasi atau transfer bank setelah pekerjaan selesai.',
+      },
+    ]}
+  />
+
+  <Stats
+    title="Otoritas Kami di Wilayah Karawang"
+    stats={[
+      { title: 'Kasus Tuntas', amount: '3.500+' },
+      { title: 'Klien Industri', amount: '150+' },
+      { title: 'Teknisi Handal', amount: '12' },
+      { title: 'Tahun Pengalaman', amount: '10' },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Hubungi WhatsApp Sekarang',
+        href: 'https://wa.me/628123456789012',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Saluran Mampet? <br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Kami Ahlinya!</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Jangan tunggu sampai meluap dan merusak properti Anda. <br />
+      <strong>Dapatkan estimasi biaya gratis sekarang juga!</strong>
+    </Fragment>
+  </CallToAction>
 </Layout>

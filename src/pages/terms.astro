@@ -1,0 +1,76 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'Syarat & Ketentuan - Ahli Saluran Mampet Karawang',
+  canonical: 'https://jasasaluranmampetkarawang.web.id/terms',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="Legalitas & Transparansi"
+    title="Syarat & Ketentuan Layanan"
+    subtitle="Kesepakatan bersama untuk menjamin kualitas kerja dan kenyamanan pelanggan di seluruh wilayah Karawang."
+  />
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Cakupan Wilayah',
+        description:
+          'Melayani seluruh Kabupaten Karawang (Klari, Telukjambe, Cikampek, KIIC, Suryacipta) untuk skala rumah tangga hingga industri.',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Prinsip Kejujuran Biaya',
+        description:
+          'Estimasi diberikan di awal. "No Lancar, No Pay" — Jika kami gagal melancarkan saluran, Anda tidak perlu membayar biaya jasa.',
+        icon: 'tabler:currency-dollar',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1740&q=80',
+      alt: 'Syarat dan Ketentuan Ahli Saluran Mampet',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">1. Lingkup Kerja & Biaya</h3>
+      Ketentuan mengenai area operasional dan sistem pembayaran yang transparan tanpa biaya tersembunyi.
+    </Fragment>
+  </Content>
+
+  <Content
+    items={[
+      {
+        title: 'Garansi Nyata 30 Hari',
+        description: 'Klaim berlaku jika saluran mampet kembali pada titik yang sama dalam masa garansi resmi.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Batasan Tanggung Jawab',
+        description:
+          'Kami tidak bertanggung jawab atas pipa yang pecah akibat korosi/usia tua atau penggunaan soda api sebelum teknisi datang.',
+        icon: 'tabler:alert-triangle',
+      },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">2. Kebijakan Garansi</h3>
+      Komitmen kami untuk memberikan hasil yang awet dan solusi jika terjadi kendala pasca-pengerjaan.
+    </Fragment>
+  </Content>
+
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
+    <div class="bg-blue-50 dark:bg-slate-800 p-8 rounded-lg border-l-4 border-primary">
+      <p class="text-sm text-gray-700 dark:text-slate-400">
+        <strong>Pembaruan Terakhir:</strong> 3 Maret 2026<br />
+        Jika ada pertanyaan mengenai poin di atas, silakan hubungi admin via WhatsApp di <strong>628123456789012</strong
+        >. Dengan menggunakan layanan kami, Anda dianggap telah menyetujui seluruh ketentuan ini.
+      </p>
+    </div>
+  </section>
+</Layout>

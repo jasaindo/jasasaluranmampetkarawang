@@ -1,0 +1,154 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Content from '~/components/widgets/Content.astro';
+import { Image } from 'astro:assets';
+
+// Import Assets - Pastikan ekstensi .webp sesuai dengan fisik file
+import imgPipa from '~/assets/images/pembersihan-saluran-pipa.webp';
+import imgGot from '~/assets/images/penyedotan-saluran-got.webp';
+import imgWastafel2 from '~/assets/images/pembersihan-wastafel.webp';
+import imgSeptikTank2 from '~/assets/images/pembersihan-septik-tank.webp';
+import imgKameraInspeksi from '~/assets/images/kamera-inspeksi-pipa.webp';
+
+const metadata = {
+  title: 'Galeri Pengerjaan',
+  ignoreTitleTemplate: true,
+  description: 'Lihat bukti pengerjaan Ahli Saluran Mampet Karawang di Galuh Mas, KIIC, dan Grand Taruma.',
+};
+
+const galleryImages = [
+  {
+    src: imgWastafel,
+    alt: 'Pelancaran saluran wastafel mampet tanpa bongkar di Grand Taruma Karawang',
+    location: 'Grand Taruma, Karawang Barat',
+    tool: 'Sectional Machine K-50',
+  },
+  {
+    src: imgSeptikTank,
+    alt: 'Penyedotan septik tank penuh area pemukiman Karawang',
+    location: 'Perumnas Telukjambe',
+    tool: 'Truk Tangki Vakum Kapasitas Besar',
+  },
+  {
+    src: imgPipa,
+    alt: 'Pembersihan saluran pipa mampet lemak membatu di Galuh Mas Karawang',
+    location: 'Cluster Victoria, Galuh Mas',
+    tool: 'Spiral Rooter K-45',
+  },
+  {
+    src: imgGot,
+    alt: 'Penyedotan saluran got mampet di kawasan KIIC Karawang',
+    location: 'Kawasan Industri KIIC',
+    tool: 'CCTV Pipe Inspection HD',
+  },
+  {
+    src: imgWastafel2,
+    alt: 'Pembersihan Wastafel di kawasan Telukjambe Barat',
+    location: 'Kawasan Telukjambe Barat',
+    tool: 'Spiral Rooter K-45',
+  },
+  {
+    src: imgSeptikTank2,
+    alt: 'Pembersihan Septik Tank Cikampek',
+    location: 'Kawasan Cikampek',
+    tool: 'Spiral Rooter K-45',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Galeri Pengerjaan"
+    title="Sanitasi Anda Aman & Lancar"
+    subtitle="Semua foto dokumentasi di bawah ini adalah hasil kerja tim sanitasi di berbagai titik di Karawang."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Konsultasi via WhatsApp',
+        href: 'https://wa.me/628123456789012',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+    ]}
+  />
+
+  <section class="px-4 py-16 mx-auto max-w-7xl lg:py-20">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
+      {
+        galleryImages.map((item) => (
+          <div class="overflow-hidden rounded-xl bg-white dark:bg-slate-900 shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <div class="relative h-64 overflow-hidden">
+              <Image
+                src={item.src}
+                alt={item.alt}
+                width={800}
+                height={600}
+                class="object-cover w-full h-full transform hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent text-white">
+                <p class="text-sm font-semibold flex items-center gap-1">{item.location}</p>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="mb-2 text-xl font-bold leading-snug dark:text-white">{item.alt}</h3>
+              <p class="text-muted dark:text-slate-400 text-sm italic">
+                Alat: <strong>{item.tool}</strong>
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <Content
+    isReversed
+    tagline="Teknologi Kami"
+    title="Melihat di Dalam Pipa Tanpa Merusak Bangunan"
+    items={[
+      {
+        title: 'Inspeksi CCTV Real-Time',
+        description:
+          'Kami menunjukkan video langsung dari dalam pipa Anda untuk menentukan titik mampet dengan akurasi centimeter.',
+        icon: 'tabler:camera',
+      },
+      {
+        title: 'Sertifikat Pengerjaan',
+        description: 'Setiap foto di sini adalah garansi bahwa tim kami bekerja secara profesional di lapangan.',
+        icon: 'tabler:certificate',
+      },
+    ]}
+    image={{
+      src: imgKameraInspeksi,
+      alt: 'Teknisi menggunakan kamera mesin inspeksi pipa modern',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Mengapa Dokumentasi Ini Penting?
+      </h3>
+      Sebagai warga Karawang yang cerdas, Anda berhak tahu siapa yang masuk ke rumah Anda.
+    </Fragment>
+  </Content>
+
+  <Features3
+    title="Saluran Anda Mampet Sekarang?"
+    subtitle="Kirim foto atau video masalah saluran Anda lewat WhatsApp."
+    columns={1}
+    items={[
+      {
+        title: 'Respon Cepat 24 Jam',
+        icon: 'tabler:clock',
+        callToAction: {
+          text: 'Kirim Foto Masalah via WA',
+          href: 'https://wa.me/628123456789012',
+          variant: 'primary',
+        },
+      },
+    ]}
+  />
+</Layout>

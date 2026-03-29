@@ -1,0 +1,84 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'Kebijakan Privasi | Ahli Saluran Mampet Karawang',
+  description:
+    'Informasi mengenai pelindungan data pribadi pelanggan Ahli Saluran Mampet Karawang sesuai UU PDP. Kami menjaga privasi alamat dan kontak Anda dengan aman.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="Privacy Policy"
+    title="Kebijakan Privasi & Keamanan Data"
+    subtitle="Keamanan data Anda sama pentingnya dengan lancarnya saluran air Anda. Kami berkomitmen melindungi informasi pribadi warga Karawang sesuai UU No. 27 Tahun 2022 (UU PDP)."
+  />
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Data Identitas & Kontak',
+        description: 'Nama, nomor WhatsApp, dan alamat lengkap di Karawang untuk keperluan pengiriman teknisi.',
+        icon: 'tabler:user-check',
+      },
+      {
+        title: 'Data Teknis Saluran',
+        description:
+          'Foto atau deskripsi masalah pipa yang Anda kirimkan agar kami bisa memberikan estimasi biaya yang akurat.',
+        icon: 'tabler:photo',
+      },
+      {
+        title: 'Data Navigasi (Otomatis)',
+        description:
+          'Informasi anonim seperti alamat IP dan jenis perangkat untuk mengoptimalkan kecepatan akses website.',
+        icon: 'tabler:device-analytics',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1557200134-90327ee9fafa?auto=format&fit=crop&w=1740&q=80',
+      alt: 'Keamanan Data Pelanggan',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 text-primary">
+        Informasi Apa yang Kami Kelola?
+      </h3>
+      <p>
+        Saya hanya mengumpulkan data yang benar-benar dibutuhkan. Saya sadar di Karawang banyak spam pinjol atau
+        penawaran tidak jelas; saya menjamin data Anda tidak akan berakhir di sana.
+      </p>
+    </Fragment>
+  </Content>
+
+  <section class="px-4 py-16 mx-auto max-w-7xl lg:py-20 bg-blue-50 dark:bg-slate-800 rounded-xl my-10">
+    <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+      <h2 class="text-3xl font-bold leading-none tracking-tight sm:text-4xl mb-4">Metode Pelindungan Data</h2>
+      <p class="text-muted dark:text-slate-400">Bagaimana kami menyimpan dan menjaga amanah informasi Anda.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="p-6 bg-white dark:bg-slate-900 rounded shadow">
+        <h4 class="font-bold text-lg mb-2">Penyimpanan</h4>
+        <p class="text-sm">
+          Database terenkripsi. Alamat & kontak hanya disimpan selama masa garansi aktif (1-3 bulan).
+        </p>
+      </div>
+      <div class="p-6 bg-white dark:bg-slate-900 rounded shadow">
+        <h4 class="font-bold text-lg mb-2">Akses Terbatas</h4>
+        <p class="text-sm">
+          Data hanya diberikan kepada teknisi internal yang bertugas menuju lokasi Anda (Klari, KIIC, dll).
+        </p>
+      </div>
+      <div class="p-6 bg-white dark:bg-slate-900 rounded shadow">
+        <h4 class="font-bold text-lg mb-2">Penghapusan</h4>
+        <p class="text-sm">
+          Anda memiliki hak <em>"Right to be Forgotten"</em>. Minta penghapusan data kapan saja via WhatsApp.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

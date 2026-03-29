@@ -1,0 +1,150 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Jasa Pembersihan Wastafel Mampet Karawang | Lancar Tanpa Bongkar',
+  ignoreTitleTemplate: true,
+  description:
+    'Solusi wastafel mampet karena lemak dan sisa makanan di Karawang. Pembersihan pipa pembuangan menggunakan mesin spiral rooter tanpa merusak keramik. Cepat dan bergaransi!',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Solusi Saluran Air"
+    title="Jasa Pembersihan Wastafel & Bak Cuci Piring Karawang"
+    subtitle="Wastafel meluap dan berbau? Jangan gunakan bahan kimia keras yang merusak pipa. Kami gunakan teknologi mekanik untuk membersihkan lemak membandel secara tuntas di area Karawang dan sekitarnya."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Solusi Wastafel Mampet (WA)',
+        href: 'https://wa.me/628123456789012',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+      { text: 'Cek Biaya Layanan', href: '#features' },
+    ]}
+    image={{
+      src: '~/assets/images/layanan-saluran-mampet.webp',
+      alt: 'Proses kerja teknisi sanitasi',
+    }}
+  />
+
+  <Features
+    id="features"
+    tagline="Masalah Umum"
+    title="Mengapa Wastafel Anda Sering Mampet?"
+    subtitle="Memahami penyebab sumbatan membantu Anda mencegah kerusakan permanen pada sistem pembuangan air di rumah atau restoran."
+    items={[
+      {
+        title: 'Akumulasi Lemak (Gris)',
+        description:
+          'Sisa minyak goreng dan lemak makanan akan mengeras di dalam pipa (saponifikasi), mengecilkan diameter aliran air dari waktu ke waktu.',
+        icon: 'tabler:flask',
+      },
+      {
+        title: 'Endapan Sisa Makanan',
+        description:
+          'Potongan kecil sayur atau nasi yang lolos dari saringan akan menumpuk di leher angsa (P-trap) dan membusuk, menyebabkan bau tidak sedap.',
+        icon: 'tabler:trash-x',
+      },
+      {
+        title: 'Kerusakan Akibat Kimia',
+        description:
+          'Penggunaan soda api berlebih dapat membuat pipa PVC melengkung atau pecah karena panas reaksi kimia, memperparah kebocoran.',
+        icon: 'tabler:alert-triangle',
+      },
+    ]}
+  />
+
+  <Content
+    isReversed
+    tagline="Metode Kerja"
+    title="Pembersihan Mekanik vs Cairan Pembersih"
+    items={[
+      {
+        title: 'Mesin Spiral Rooter',
+        description:
+          'Alat fleksibel yang masuk ke lekukan pipa untuk menghancurkan sumbatan lemak tanpa membongkar pipa atau keramik.',
+      },
+      {
+        title: 'Pembersihan Leher Angsa',
+        description:
+          'Pembongkaran dan pembersihan manual pada bagian trap untuk memastikan sisa kotoran padat terangkat sempurna.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/pelancaran-saluran-kamar-mandi-1.png',
+      alt: 'Pelancaran salurab kamar mandi 1',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Pembersihan Total Hingga ke Saluran Utama
+      </h3>
+      Kami tidak hanya melancarkan air yang menggenang. Tim kami memastikan seluruh jalur pipa dari wastafel hingga ke bak
+      kontrol bebas dari kerak lemak yang menempel di dinding pipa, sehingga masalah tidak muncul kembali dalam waktu dekat.
+    </Fragment>
+  </Content>
+
+  <Steps
+    title="Tahapan Penanganan Wastafel"
+    items={[
+      {
+        title: 'Langkah 1: Inspeksi Aliran',
+        description:
+          'Pengecekan titik sumbatan, apakah hanya terjadi di satu wastafel atau pada seluruh jalur pembuangan air kotor.',
+        icon: 'tabler:microscope',
+      },
+      {
+        title: 'Langkah 2: Proses Rooting',
+        description:
+          'Memasukkan kabel baja fleksibel yang berputar untuk mengikis lemak dan menarik kotoran (rambut/benang) keluar dari pipa.',
+        icon: 'tabler:refresh',
+      },
+      {
+        title: 'Langkah 3: High Pressure Flushing',
+        description:
+          'Penyemprotan air bertekanan untuk membilas sisa-sisa sediaan lemak yang telah dihancurkan oleh mesin rooter.',
+        icon: 'tabler:droplet',
+      },
+      {
+        title: 'Langkah 4: Tes Kelancaran',
+        description:
+          'Menguji aliran air dengan volume maksimal untuk memastikan drainase sudah kembali normal dan tidak ada kebocoran pada sambungan.',
+        icon: 'tabler:circle-check',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/pelancaran-saluran-kamar-mandi-3.jpg',
+      alt: 'Pelancaran salurab kamar mandi 3',
+    }}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Panggil Teknisi Sekarang',
+        href: 'https://wa.me/628123456789012',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Wastafel Mampet Mengganggu <br class="block sm:hidden" /><span class="text-blue-600 dark:text-blue-400"
+        >Operasional Dapur?</span
+      >
+    </Fragment>
+    <Fragment slot="subtitle">
+      Tersedia layanan darurat untuk rumah tangga, cafe, dan restoran di wilayah Galuh Mas, KIIC, Suryacipta, dan
+      seluruh Karawang. Harga kompetitif dengan hasil bersih maksimal.
+    </Fragment>
+  </CallToAction>
+</Layout>

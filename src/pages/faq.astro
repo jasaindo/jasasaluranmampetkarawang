@@ -1,0 +1,117 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+
+const metadata = {
+  title: 'Pusat Bantuan & FAQ - Ahli Saluran Mampet Karawang',
+  description:
+    'Temukan jawaban cepat mengenai biaya jasa, metode pengerjaan tanpa bongkar, durasi servis, hingga garansi layanan saluran mampet di Karawang.',
+  canonical: 'https://jasasaluranmampetkarawang.web.id/faq',
+};
+---
+
+<Layout metadata={metadata}>
+  {/* Hero Section */}
+  <HeroText
+    tagline="Pusat Bantuan"
+    title="Pertanyaan Sering Diajukan (FAQ)"
+    subtitle="Jawaban jujur dan transparan berdasarkan pengalaman lapangan selama 10 tahun menangani saluran mampet di wilayah Karawang."
+  />
+
+  {/* FAQ Utama: Biaya & Metode */}
+  <FAQs
+    title="Biaya & Metode Pengerjaan"
+    items={[
+      {
+        title: 'Berapa biaya jasa saluran mampet di Karawang?',
+        description:
+          'Harga bervariasi tergantung jenis sumbatan. Kami menggunakan sistem **Flat Rate per Titik** sesuai kesepakatan di awal, bukan sistem per meter yang menjebak.',
+      },
+      {
+        title: 'Apakah ada biaya kunjungan jika pengerjaan batal?',
+        description:
+          'Jika teknisi sudah sampai di lokasi (seperti Cikampek/Rengasdengklok) namun dibatalkan sepihak, kami hanya mengenakan biaya transportasi minimal.',
+      },
+      {
+        title: '"No Lancar, No Pay" — Apakah benar?',
+        description:
+          'Betul. Jika peralatan canggih kami gagal melancarkan saluran Anda karena keterbatasan teknis kami, Anda **GRATIS** biaya jasa.',
+      },
+      {
+        title: 'Apa yang dimaksud dengan "Tanpa Bongkar"?',
+        description:
+          'Kami menggunakan mesin **Spiral Rooter** atau **Hydro Jetting** untuk menghancurkan kotoran dari dalam pipa tanpa merusak lantai keramik atau semen rumah Anda.',
+      },
+    ]}
+  />
+
+  {/* Content Section: Masalah Spesifik (E-E-A-T) */}
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Waspada Bahaya Soda Api',
+        description:
+          'Penggunaan soda api berlebih bisa merusak pipa (deformasi) dan mengeraskan lemak menjadi seperti semen. Segera hubungi kami sebelum pipa rusak permanen.',
+        icon: 'tabler:alert-triangle',
+      },
+      {
+        title: 'Beda Septic Tank vs Saluran Mampet',
+        description:
+          'Jika septic tank kosong tapi air tetap meluap, berarti ada sumbatan di jalur pipa. Jasa sedot tinja tidak bisa mengatasi ini, namun Ahli Saluran Mampet bisa.',
+        icon: 'tabler:tool',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/layanan-saluran-mampet.webp',
+      alt: 'Teknisi Saluran Mampet Karawang',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Analisis Teknis Spesifik</h3>
+      Solusi tepat sasaran untuk warga Grand Taruma hingga pengelola pabrik di KIIC.
+    </Fragment>
+  </Content>
+
+  {/* Jangkauan Wilayah */}
+  <Features3
+    title="Cakupan Layanan Karawang"
+    subtitle="Kami standby 24 jam untuk merespon panggilan darurat di titik-titik strategis."
+    columns={3}
+    items={[
+      {
+        title: 'Karawang Pusat',
+        description: 'Nagasari, Tanjungpura, Karawang Pawitan, Galuh Mas.',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Telukjambe & KIIC',
+        description: 'Sukaluyu, Perumnas, Kawasan Industri KIIC & Suryacipta.',
+        icon: 'tabler:building-factory',
+      },
+      {
+        title: 'Cikampek & Klari',
+        description: 'Pancawati, Kosambi, Curug, Purwasari, hingga Jatisari.',
+        icon: 'tabler:truck',
+      },
+    ]}
+  />
+
+  {/* Call to Action Utama */}
+  <FAQs
+    title="Masih butuh bantuan?"
+    items={[
+      {
+        title: 'Apakah melayani panggilan 24 Jam?',
+        description: 'Benar. Tim kami siap merespon luapan air darurat di malam hari atau hari libur sekalipun.',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </FAQs>
+</Layout>

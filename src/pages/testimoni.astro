@@ -1,0 +1,84 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+
+const metadata = {
+  title: 'Testimoni & Cerita Sukses Pelanggan - Ahli Saluran Mampet Karawang',
+  description:
+    'Baca pengalaman nyata warga Karawang yang telah membuktikan kehebatan jasa saluran mampet tanpa bongkar kami.',
+  canonical: 'https://jasasaluranmampetkarawang.web.id/testimoni',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Testimoni"
+    title="Cerita Sukses Pelanggan Kami"
+    subtitle="Bukti nyata layanan profesional untuk warga, pebisnis, dan industri di seluruh Kabupaten Karawang."
+    image={{
+      src: '~/assets/images/hero-image.webp',
+      alt: 'Testimoni Ahli Saluran Mampet Karawang',
+    }}
+  />
+
+  <Testimonials
+    title="Apa Kata Mereka?"
+    subtitle="Dari perumahan elit hingga kawasan industri KIIC."
+    testimonials={[
+      {
+        testimonial: `Panik banget karena WC lantai atas mampet dan rembes ke plafon. Cuma 45 menit pakai mesin spiral, saluran lancar lagi tanpa bongkar keramik. Benar-benar profesional!`,
+        name: 'Ibu Sari',
+        job: 'Penghuni Grand Taruma',
+        image: {
+          src: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&h=400&q=80',
+          alt: 'Ibu Sari',
+        },
+      },
+      {
+        testimonial: `Wastafel dapur mampet parah karena lemak bertahun-tahun. Tim datang pakai alat rooter canggih, lemak membatu hancur semua. Harganya transparan sesuai deal WA.`,
+        name: 'Bapak Budi',
+        job: 'Warga Galuh Mas',
+        image: {
+          src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&h=400&q=80',
+          alt: 'Bapak Budi',
+        },
+      },
+      {
+        testimonial: `Sangat sigap untuk maintenance drainase pabrik. Paham prosedur K3 di kawasan KIIC dan memberikan laporan detail. Sangat direkomendasikan untuk vendor pabrik.`,
+        name: 'Bapak Hendra',
+        job: 'Facility Manager KIIC',
+        image: {
+          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&h=400&q=80',
+          alt: 'Bapak Hendra',
+        },
+      },
+      {
+        testimonial: `Restoran mampet saat jam makan siang adalah bencana. Tim respon cepat dan pengerjaan lewat pintu belakang agar tidak ganggu pelanggan. Garansinya beneran ada!`,
+        name: 'Manager Resto',
+        job: 'Area Resinda Park Mall',
+        image: {
+          src: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&w=400&h=400&q=80',
+          alt: 'Manager Resto',
+        },
+      },
+    ]}
+  />
+
+  <FAQs
+    title="FAQ Ulasan"
+    items={[
+      {
+        title: 'Apakah ulasan ini asli?',
+        description:
+          'Ya, semua testimoni ini berasal dari pesan WhatsApp, ulasan Google Maps, dan komentar langsung pelanggan kami setelah pengerjaan selesai.',
+      },
+      {
+        title: 'Bagaimana cara memberikan ulasan?',
+        description:
+          'Anda bisa memberikan ulasan melalui Google Maps kami atau mengirimkan pesan langsung kepada teknisi setelah pekerjaan selesai.',
+      },
+    ]}
+  />
+</Layout>

@@ -1,0 +1,77 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+
+const metadata = {
+  title: 'Jasa Pelancaran Saluran Kamar Mandi Karawang | Tanpa Bongkar & Garansi',
+  ignoreTitleTemplate: true,
+  description:
+    'Saluran kamar mandi mampet di Karawang? Saya berikan solusi pelancaran pipa tanpa bongkar menggunakan mesin spiral modern. Cepat, bersih, dan bergaransi 30 hari!',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Solusi Cepat & Tanpa Bongkar"
+    title="Jasa Pelancaran Saluran Kamar Mandi Mampet di Karawang"
+    subtitle="Jangan biarkan air menggenang jadi sarang kuman! Saya bantu melancarkan saluran pembuangan Anda dengan teknologi Spiral Rooter tanpa merusak lantai atau dinding rumah Anda."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Tanya Biaya (WhatsApp)',
+        href: 'https://wa.me/628123456789012',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/layanan-saluran-mampet.webp',
+      alt: 'Proses kerja teknisi sanitasi',
+    }}
+  />
+
+  <FAQs
+    title="Pertanyaan yang Sering Diajukan (FAQ)"
+    subtitle="Jawaban cepat untuk keraguan Anda mengenai layanan kami di Karawang."
+    items={[
+      {
+        title: 'Berapa biaya jasa pelancaran saluran kamar mandi di Karawang?',
+        description:
+          'Biaya sangat tergantung pada tingkat kesulitan dan panjang pipa. Namun, saya selalu memberikan estimasi harga di awal sebelum mulai bekerja agar transparan.',
+      },
+      {
+        title: 'Wilayah mana saja di Karawang yang bisa dipanggil?',
+        description:
+          'Saya melayani Karawang Barat, Karawang Timur, Klari, Telukjambe, Cikampek, Kosambi, hingga kawasan industri KIIC dan Suryacipta.',
+      },
+      {
+        title: 'Apakah pengerjaannya berisik atau kotor?',
+        description:
+          'Mesin rooter kami cukup senyap dan pengerjaannya sangat rapi. Kami selalu membersihkan kembali area kerja setelah selesai.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Hubungi Saya Sekarang',
+        href: 'https://wa.me/628123456789012',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Saluran Kamar Mandi Mampet? <br /><span class="text-blue-600 dark:text-blue-400">Hubungi Ahlinya di Karawang</span
+      >
+    </Fragment>
+    <Fragment slot="subtitle">
+      Jangan tunda hingga air meluap ke ruang tamu. Tersedia layanan darurat untuk area perumahan dan ruko di seluruh
+      Karawang. **Garansi 30 hari, No Lancar No Pay!**
+    </Fragment>
+  </CallToAction>
+</Layout>

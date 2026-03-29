@@ -5,71 +5,125 @@ import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
-  title: 'Hubungi Kami - Jasa Saluran Mampet Karawang',
+  title: 'Kontak Ahli Saluran Mampet Karawang - Respon Cepat 24 Jam Tanpa Bongkar',
+  description:
+    'Butuh jasa saluran mampet di Karawang? Hubungi kami sekarang untuk solusi WC mampet, wastafel tersumbat, dan drainase pabrik. Melayani seluruh wilayah Karawang dengan garansi pengerjaan.',
 };
 ---
 
 <Layout metadata={metadata}>
-  <HeroText tagline="Kontak" title="Layanan Cepat 24 Jam!" />
+  <HeroText tagline="Layanan Darurat 24/7" title="Saluran Mampet Jangan Dibiarkan, Hubungi Ahlinya Sekarang!" />
+
+  <section class="max-w-4xl mx-auto px-4 py-8 text-lg leading-relaxed text-gray-700 dark:text-slate-400">
+    <p class="mb-6">
+      <strong>Saya paham betul rasanya</strong> ketika Anda pulang kerja di Karawang, lelah setelah seharian di kawasan industri,
+      lalu mendapati air di kamar mandi tidak mau turun atau wastafel dapur meluap. Kepanikan itu nyata. Itulah alasan mengapa
+      saya mendirikan layanan <strong>Ahli Saluran Mampet Karawang</strong>. Kami hadir bukan sekadar menawarkan jasa,
+      tapi memberikan ketenangan pikiran bagi warga Karawang yang menghadapi masalah sanitasi pelik.
+    </p>
+    <p class="mb-6">
+      Di halaman kontak ini, Anda tidak hanya menemukan formulir. Anda menemukan akses langsung ke teknisi lapangan yang
+      siap meluncur ke rumah Anda di <em>Galuh Mas</em>, <em>Telukjambe</em>, hingga <em>Cikampek</em> tanpa menunda-nunda.
+    </p>
+  </section>
 
   <ContactUs
     id="form"
-    title="Kirim Pesan atau Jadwalkan Kunjungan"
-    subtitle="Punya masalah saluran mampet yang mendesak? Isi formulir di bawah ini atau langsung hubungi kami melalui WhatsApp untuk respons yang lebih cepat."
+    title="Konsultasi Gratis Sekarang!"
+    subtitle="Jangan tunggu sampai air meluap ke ruang tamu. Isi formulir atau langsung tekan tombol WhatsApp untuk respon kilat dari tim teknisi kami di lapangan."
     inputs={[
       {
         type: 'text',
         name: 'name',
-        label: 'Nama Lengkap',
+        label: 'Nama Lengkap (Sesuai KTP/Nama Panggilan)',
       },
       {
-        type: 'text',
-        name: 'phone',
-        label: 'Nomor WhatsApp / HP',
+        type: 'email',
+        name: 'email',
+        label: 'Alamat Email (Opsional)',
       },
     ]}
     textarea={{
-      label: 'Detail Masalah (Contoh: WC Mampet / Wastafel Macet)',
+      label: 'Ceritakan Masalah Saluran Anda (Contoh: WC Mampet di Perumahan Grand Taruma)',
     }}
     disclaimer={{
       label:
-        'Dengan mengirimkan formulir ini, Anda menyetujui pengumpulan informasi lokasi dan kontak untuk keperluan survei jasa.',
+        'Data Anda aman bersama kami. Kami hanya menggunakan informasi ini untuk keperluan koordinasi teknisi menuju lokasi Anda di wilayah Karawang.',
     }}
-    description="Tim teknisi kami biasanya memberikan estimasi biaya dan waktu dalam waktu kurang dari 1 jam."
+    description="Tim admin kami standby 24 jam. Biasanya kami merespon dalam kurang dari 15 menit melalui WhatsApp."
   />
 
   <Features2
-    title="Kami Siap Membantu Anda!"
+    title="Layanan Spesialis Kami di Karawang"
     items={[
       {
-        title: 'Konsultasi Masalah',
-        description: `Diskusikan gejala saluran mampet Anda (air meluap, bau tidak sedap, atau bunyi aneh pada pipa) untuk mendapatkan estimasi biaya awal.`,
+        title: 'Darurat WC & Septic Tank',
+        description: `Menggunakan mesin rooter berkekuatan tinggi untuk menghancurkan sumbatan kain, pembalut, atau plastik yang masuk ke pipa WC rumah Anda tanpa perlu bongkar keramik.`,
       },
       {
-        title: 'Layanan Darurat',
+        title: 'Drainase Kawasan Industri',
         description:
-          'Kami melayani pengerjaan di hari libur dan malam hari untuk kasus mendesak seperti banjir di area dapur atau kamar mandi.',
+          'Kami memiliki izin resmi dan APD lengkap untuk menangani saluran mampet di area pabrik KIIC, Suryacipta, dan KIM. Solusi profesional untuk maintenance drainase skala besar.',
       },
       {
-        title: 'Area Jangkauan',
+        title: 'Wastafel & Saluran Lemak',
         description:
-          'Melayani seluruh wilayah Karawang Barat, Karawang Timur, Klari, Telukjambe, Galuh Mas, hingga Cikampek.',
+          'Masalah klasik di restoran Karawang. Kami membersihkan kerak lemak yang membatu di dalam pipa menggunakan teknik jetting yang aman bagi struktur pipa paralon.',
       },
       {
-        title: 'WhatsApp / Telp',
-        description: '0812-XXXX-XXXX', // Silakan isi dengan nomor asli Anda
-        icon: 'tabler:brand-whatsapp',
+        title: 'Telepon Langsung (Fast Response)',
+        description: '0812-XXXX-XXXX (Ganti dengan nomor Anda)',
+        icon: 'tabler:headset',
       },
       {
-        title: 'Email Bisnis',
-        description: 'admin@jasasaluranmampetkarawang.id',
+        title: 'Email Resmi',
+        description: 'admin@jasasaluranmampetkarawang.web.id',
         icon: 'tabler:mail',
       },
       {
-        title: 'Lokasi Pusat',
-        description: 'Kabupaten Karawang, Jawa Barat, Indonesia',
+        title: 'Kantor Pusat Karawang',
+        description: 'Jl. Raya Karawang - Cikampek, Kec. Klari, Karawang, Jawa Barat',
         icon: 'tabler:map-pin',
       },
     ]}
   />
+
+  <section class="max-w-3xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold mb-8 text-center">F.A.Q - Pertanyaan Sering Diajukan Warga Karawang</h2>
+    <div class="space-y-6">
+      <div>
+        <h3 class="font-bold text-xl text-primary">Berapa biaya jasa saluran mampet di Karawang?</h3>
+        <p>
+          Harga kami sangat transparan. Kami tidak menggunakan sistem per meter yang menjebak. Harga ditentukan
+          berdasarkan jenis kesulitan (WC, Wastafel, atau Drainase Pabrik). Hubungi kami untuk estimasi harga jujur
+          sebelum pengerjaan dimulai.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-bold text-xl text-primary">Kecamatan mana saja yang dicover?</h3>
+        <p>
+          Kami melayani seluruh 30 kecamatan di Karawang, termasuk Telukjambe Timur/Barat, Klari, Karawang Timur/Barat,
+          Cikampek, hingga wilayah pesisir seperti Rengasdengklok dan Batujaya.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-bold text-xl text-primary">Apakah ada garansi jika mampet lagi?</h3>
+        <p>
+          Tentu saja. Saya memberikan garansi pengerjaan. Jika dalam waktu yang disepakati saluran kembali mampet karena
+          kesalahan teknis kami, tim akan datang kembali GRATIS tanpa biaya tambahan.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-4 py-8 text-center">
+    <h2 class="text-2xl font-bold mb-4">Butuh Bantuan Segera?</h2>
+    <p class="mb-6">
+      Jangan biarkan masalah kecil menjadi bencana besar (banjir dalam rumah). Tim Ahli Saluran Mampet Karawang sudah
+      siap berangkat ke lokasi Anda.
+    </p>
+    <a href="https://wa.me/628XXXXXXXXXX" class="btn btn-primary px-8 py-3 rounded-full font-bold"
+      >Chat WhatsApp Sekarang (Respon 5 Menit)</a
+    >
+  </section>
 </Layout>

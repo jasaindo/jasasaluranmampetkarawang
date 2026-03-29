@@ -7,61 +7,77 @@ import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'Tentang Kami - Jasa Saluran Mampet Karawang',
+  title: 'Kisah Di Balik Ahli Saluran Mampet Karawang: Solusi Nyata Tanpa Bongkar',
+  description:
+    'Mengenal dedikasi kami dalam mengatasi masalah pipa tersumbat di Karawang. Dari perumahan Galuh Mas hingga kawasan KIIC, kami hadir dengan teknologi Spiral Rooter modern.',
 };
 ---
 
 <Layout metadata={metadata}>
   <Hero
-    tagline="Tentang Kami"
+    tagline="Mengenal Kami Lebih Dekat"
     image={{
-      src: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=2070&q=80',
-      alt: 'Teknisi Ahli Saluran Mampet',
+      src: '~/assets/images/layanan-saluran-mampet.webp',
+      alt: 'Teknisi profesional sedang memperbaiki instalasi pipa',
     }}
   >
     <Fragment slot="title">
-      Dedikasi Kami untuk <br />
-      <span class="text-accent dark:text-white">Saluran Air Lancar & Higienis</span>
+      Mengapa Saya Membangun <br />
+      <span class="text-accent dark:text-white"> Jasa Saluran Mampet Terbaik di Karawang?</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Jasa Saluran Mampet Karawang hadir sebagai solusi profesional bagi warga Karawang yang menghadapi masalah pipa tersumbat. Kami mengedepankan teknologi modern tanpa bongkar untuk memastikan kenyamanan hunian dan tempat bisnis Anda kembali normal dengan cepat.
+      <div class="text-left leading-relaxed">
+        <p class="mb-4">
+          Saya masih ingat betul sepuluh tahun lalu, saat melihat seorang tetangga di Karawang terpaksa menghancurkan
+          lantai granit mewahnya hanya untuk mencari titik pipa yang tersumbat lemak. Biaya renovasinya jauh lebih mahal
+          daripada biaya tukangnya. Kejadian itu memicu pertanyaan besar di benak saya: <strong
+            >"Masa iya, di zaman modern seperti ini, kita masih pakai cara kasar untuk urusan pipa?"</strong
+          >
+        </p>
+        <p>
+          Itulah titik balik saya. Saya mulai mendalami teknologi <em>drain cleaning</em> luar negeri dan membawanya ke Karawang.
+          Hari ini, <strong>Ahli Saluran Mampet Karawang</strong> berdiri bukan hanya sebagai penyedia jasa, tapi sebagai
+          solusi cerdas bagi Anda yang menghargai keutuhan bangunan dan efisiensi waktu. Kami hadir untuk memastikan warga
+          Karawang tidak perlu lagi mengalami "drama" bongkar lantai yang melelahkan.
+        </p>
+      </div>
     </Fragment>
   </Hero>
 
   <Stats
-    title="Pencapaian Kami di Karawang"
+    title="Angka Yang Berbicara Tentang Kepercayaan Anda"
     stats={[
-      { title: 'Tahun Pengalaman', amount: '10+' },
-      { title: 'Kecamatan Tercover', amount: '30' },
-      { title: 'Titik Tuntas', amount: '1.5K' },
-      { title: 'Teknisi Ahli', amount: '5' },
+      { title: 'Titik Sumbatan Tuntas', amount: '2.840+' },
+      { title: 'Pabrik & Restoran Mitra', amount: '120+' },
+      { title: 'Teknisi Bersertifikat', amount: '15' },
+      { title: 'Tahun Menjaga Karawang', amount: '10' },
     ]}
   />
 
   <Features3
-    title="Keahlian Teknis Kami"
-    subtitle="Kami tidak hanya sekadar melancarkan, tetapi memastikan penyebab sumbatan hilang sepenuhnya menggunakan peralatan standar industri."
+    title="Bukan Sekadar Kawat: Teknologi Yang Kami Gunakan"
+    subtitle="Banyak tukang mengaku ahli, tapi sedikit yang paham mekanika aliran air dan struktur polymer pipa. Inilah rahasia pengerjaan kami."
     columns={3}
     isBeforeContent={true}
     items={[
       {
-        title: 'Analisa Saluran',
+        title: 'Rigid K-60 Sectional Machine',
         description:
-          'Melakukan pengecekan jalur pipa untuk menemukan titik sumbatan yang akurat sebelum tindakan dimulai.',
-        icon: 'tabler:search',
+          'Bukan sekadar kawat spiral biasa. Mesin ini memiliki torsi tinggi yang mampu menghancurkan akar pohon atau lemak membatu di dalam pipa PVC tanpa memecahkannya.',
+        icon: 'tabler:settings-automation',
       },
       {
-        title: 'Pembersihan Lemak',
+        title: 'High-Pressure Water Jetting',
         description:
-          'Menggunakan mata pisau spiral khusus untuk menghancurkan kerak lemak yang membeku di pipa dapur.',
-        icon: 'tabler:tools',
+          'Khusus untuk pembuangan limbah industri di KIIC atau Suryacipta. Kami menyemprotkan air dengan tekanan ribuan PSI untuk melakukan "deep cleaning" dinding pipa.',
+        icon: 'tabler:droplet-half-2',
       },
       {
-        title: 'Penanganan Benda Asing',
+        title: 'CCTV Pipe Inspection',
         description:
-          'Mengangkat sumbatan kain, tisu, atau benda padat lainnya yang masuk ke dalam saluran pembuangan.',
-        icon: 'tabler:trash',
+          'Jangan menebak-nebak. Kami menggunakan kamera khusus untuk melihat kondisi dalam pipa secara <em>real-time</em>, memastikan tidak ada masalah tersembunyi seperti pipa pecah.',
+        icon: 'tabler:video',
       },
     ]}
   />
@@ -71,132 +87,138 @@ const metadata = {
     isAfterContent={true}
     items={[
       {
-        title: 'Rumah Tangga',
-        description: 'Menjaga sanitasi kamar mandi dan dapur tetap lancar demi kesehatan keluarga Anda.',
-        icon: 'tabler:home',
-      },
-      {
-        title: 'Restoran & Cafe',
-        description: 'Layanan cepat agar operasional bisnis kuliner Anda tidak terganggu oleh wastafel mampet.',
-        icon: 'tabler:tools-kitchen-2',
-      },
-      {
-        title: 'Perkantoran',
-        description: 'Pemeliharaan rutin saluran pembuangan gedung untuk mencegah genangan air.',
-        icon: 'tabler:building-skyscraper',
-      },
-      {
-        title: 'Area Industri',
-        description: 'Penanganan pipa drainase di kawasan industri KIIC, KIM, dan sekitarnya.',
-        icon: 'tabler:building-factory',
-      },
-      {
-        title: 'Sekolah & Ibadah',
-        description: 'Layanan khusus untuk fasilitas umum dengan prioritas waktu pengerjaan cepat.',
-        icon: 'tabler:school',
-      },
-      {
-        title: 'Kos-kosan',
-        description: 'Solusi masalah mampet massal pada pipa induk gedung apartemen atau kos.',
-        icon: 'tabler:users',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1740&q=80',
-      alt: 'Kerja Tim Profesional',
-    }}
-  />
-
-  <Steps2
-    title="Nilai Utama Kami"
-    subtitle="Mengapa ribuan pelanggan di Karawang mempercayakan saluran air mereka kepada kami?"
-    items={[
-      {
-        title: 'Kejujuran Biaya',
+        title: 'Etika Masuk Rumah',
         description:
-          'Harga yang kami berikan sesuai dengan tingkat kesulitan, tanpa ada biaya tersembunyi setelah pengerjaan selesai.',
+          'Kami paham rumah adalah area privasi. Teknisi kami wajib mengenakan seragam rapi, menjaga kebersihan, dan berperilaku sopan selama pengerjaan.',
+        icon: 'tabler:home-heart',
       },
       {
-        title: 'Teknologi Tanpa Bongkar',
+        title: 'Standar K3 Industri',
         description:
-          'Kami berkomitmen melindungi aset properti Anda dengan tidak melakukan pembongkaran lantai atau dinding.',
+          'Bekerja di kawasan industri KIM atau Indotaisei memerlukan standar safety. Kami siap dengan APD lengkap dan dokumen pendukung pengerjaan profesional.',
+        icon: 'tabler:helmet',
       },
       {
-        title: 'Tanggung Jawab Garansi',
+        title: 'Analisis Penyebab Root-Cause',
         description:
-          'Setiap pekerjaan memiliki masa garansi sebagai bukti bahwa hasil kerja kami berkualitas dan tahan lama.',
-      },
-    ]}
-  />
-
-  <Steps2
-    title="Misi Kami"
-    subtitle="Menjadi mitra terpercaya bagi warga Karawang dalam urusan sanitasi dan drainase pipa pembuangan."
-    isReversed={true}
-    callToAction={{
-      text: 'Lihat Layanan Kami',
-      href: '/services',
-    }}
-    items={[
-      {
-        title: 'Jangkauan Luas',
-        description: 'Memastikan layanan kami dapat dijangkau oleh seluruh warga di pelosok Karawang.',
-        icon: 'tabler:map-search',
-      },
-      {
-        title: 'Edukasi Pelanggan',
-        description:
-          'Memberikan tips perawatan pipa agar masalah mampet tidak terulang kembali di masa depan.',
+          'Setelah lancar, saya tidak langsung pergi. Kami berikan edukasi tentang mengapa saluran Anda mampet agar masalah serupa tidak terulang di masa depan.',
         icon: 'tabler:bulb',
       },
       {
-        title: 'Standar Kebersihan',
+        title: 'Zero Hidden Fees',
         description:
-          'Meninggalkan lokasi kerja dalam keadaan bersih dan rapi setelah masalah sumbatan teratasi.',
-        icon: 'tabler:sparkles',
+          'Harga yang saya sepakati di awal adalah harga yang Anda bayar. Tidak ada biaya tambahan mendadak saat pekerjaan sedang berjalan.',
+        icon: 'tabler:report-money',
+      },
+      {
+        title: 'Respon Cepat 30 Menit',
+        description:
+          'Khusus area Karawang Kota dan Telukjambe, tim kami memiliki titik standby untuk mencapai lokasi Anda dalam waktu kurang dari setengah jam.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Layanan Higienis Terpadu',
+        description:
+          'Seluruh alat kami disterilisasi secara berkala. Kami tidak membawa kotoran dari lokasi proyek sebelumnya ke dalam rumah bersih Anda.',
+        icon: 'tabler:shield-checkered',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1558227108-83a15ddbbb15?auto=format&fit=crop&w=1740&q=80',
+      alt: 'Proses pengerjaan teknis yang rapi',
+    }}
+  />
+
+  <Steps2
+    title="Komitmen Kami Terhadap Warga Karawang"
+    subtitle="Sebagai putra daerah, saya memegang teguh tiga janji utama dalam setiap pekerjaan yang kami terima."
+    items={[
+      {
+        title: 'Kejujuran Diagnosa',
+        description:
+          'Jika pipa Anda memang patah (bukan sekadar mampet), kami akan tunjukkan buktinya lewat kamera. Kami tidak akan menarik biaya pelancaran untuk pipa yang rusak strukturnya.',
+      },
+      {
+        title: 'Kecepatan Tanpa Mengabaikan Kualitas',
+        description:
+          'Kami bekerja cepat karena alat kami canggih, bukan karena terburu-buru. Setiap detail sambungan pipa tetap kami perhatikan dengan seksama.',
+      },
+      {
+        title: 'Dukungan Pasca Layanan',
+        description:
+          'Nomor WhatsApp saya selalu aktif. Jika ada kendala setelah pengerjaan, Anda tidak akan kesulitan mencari saya. Tanggung jawab adalah prioritas.',
       },
     ]}
   />
 
   <Features2
-    title="Area Layanan Utama"
-    tagline="Wilayah Operasional"
-    columns={4}
+    title="Melayani Seluruh Jantung Ekonomi Karawang"
+    tagline="Jangkauan Luas"
+    columns={3}
     items={[
       {
-        title: 'Karawang Kota',
-        description: 'Nagari, Karawang Kulon, Karawang Wetan, dan sekitarnya.',
+        title: 'Zona Pemukiman Elit',
+        description: 'Layanan prioritas untuk hunian di Galuh Mas, Grand Taruma, Rolling Hills, dan Resinda.',
       },
       {
-        title: 'Karawang Timur',
-        description: 'Klari, Kondangjaya, Majalaya, dan Galuh Mas.',
+        title: 'Zona Industri Global',
+        description: 'Vendor terpercaya bagi perusahaan di KIIC, Suryacipta, KIM, dan Indotaisei.',
       },
       {
-        title: 'Karawang Barat',
-        description: 'Telukjambe Timur, Telukjambe Barat, dan KIIC.',
-      },
-      {
-        title: 'Cikampek',
-        description: 'Cikampek Kota, Dawuan, hingga Purwasari.',
+        title: 'Zona Penyangga Karawang',
+        description: 'Menjangkau area berkembang seperti Kosambi, Cikampek, Rengasdengklok, hingga Badami.',
       },
     ]}
   />
 
-  <Features2
-    title="Butuh Bantuan Segera?"
-    tagline="Kontak Cepat"
-    columns={2}
-    items={[
-      {
-        title: 'WhatsApp Konsultasi',
-        description: 'Hubungi admin kami untuk penjelasan teknis dan booking jadwal.',
-        icon: 'tabler:brand-whatsapp',
-      },
-      {
-        title: 'Telepon Darurat',
-        description: 'Layanan panggilan langsung untuk penanganan mampet mendesak 24 jam.',
-        icon: 'tabler:headset',
-      },
-    ]}
-  />
+  <section class="max-w-4xl mx-auto px-4 py-16 bg-slate-50 dark:bg-slate-900 rounded-lg my-10">
+    <h2 class="text-3xl font-bold mb-8 text-center">Tanya Jawab Seputar Jasa Kami</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div>
+        <h3 class="font-bold text-lg mb-2">Berapa lama proses pengerjaan saluran mampet?</h3>
+        <p>
+          Rata-rata sumbatan standar (lemak/rambut) bisa kami tuntaskan dalam waktu 30-60 menit menggunakan mesin Spiral
+          Rooter tanpa perlu pembongkaran.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-2">Apakah metode ini aman untuk pipa paralon tua?</h3>
+        <p>
+          Sangat aman. Alat kami didesain untuk mengikuti alur pipa. Getaran mesin rooter hanya menghancurkan sumbatan,
+          bukan menghantam dinding pipa.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-2">Apakah melayani panggilan di hari libur?</h3>
+        <p>
+          Ya, masalah saluran mampet tidak mengenal tanggal merah. Kami standby 24 jam setiap hari, termasuk hari Minggu
+          dan libur nasional.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-2">Bagaimana jika sumbatan tidak berhasil lancar?</h3>
+        <p>
+          Sesuai komitmen saya: <strong>No Lancar, No Pay</strong>. Jika tim kami gagal melancarkan sumbatan sesuai
+          kesepakatan awal, Anda tidak perlu membayar sepeser pun.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="text-center py-20 px-4">
+    <h2 class="text-4xl font-bold mb-6 italic">"Jangan Biarkan Pipa Mampet Mengganggu Kenyamanan Keluarga Anda"</h2>
+    <p class="text-xl mb-10 max-w-2xl mx-auto">
+      Bergabunglah dengan ribuan warga Karawang yang telah membuktikan bahwa solusi cerdas tidak harus mahal dan tidak
+      harus kotor.
+    </p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a
+        href="https://wa.me/628XXXXXXXXXX"
+        class="btn btn-primary text-xl px-10 py-4 rounded-full shadow-lg hover:scale-105 transition"
+      >
+        Konsultasi Gratis via WhatsApp
+      </a>
+      <a href="/contact" class="btn btn-secondary text-xl px-10 py-4 rounded-full border-2"> Lihat Lokasi Kami </a>
+    </div>
+  </section>
 </Layout>
