@@ -5,6 +5,7 @@ import { SITE, APP_BLOG } from 'astrowind:config';
 import { trim } from '~/utils/utils';
 
 export const trimSlash = (s: string) => trim(trim(s, '/'));
+
 const createPath = (...params: string[]) => {
   const paths = params
     .map((el) => trimSlash(el))
@@ -25,7 +26,10 @@ export const BLOG_BASE = cleanSlug(APP_BLOG?.list?.pathname);
 export const CATEGORY_BASE = cleanSlug(APP_BLOG?.category?.pathname);
 export const TAG_BASE = cleanSlug(APP_BLOG?.tag?.pathname) || 'tag';
 
-export const POST_PERMALINK_PATTERN = trimSlash(APP_BLOG?.post?.permalink || `${BLOG_BASE}/%slug%`);
+/** * MODIFIKASI: Menghapus BLOG_BASE dari pattern default agar 
+ * post langsung berada di root (/%slug%)
+ */
+export const POST_PERMALINK_PATTERN = trimSlash(APP_BLOG?.post?.permalink || `%slug%`);
 
 /** */
 export const getCanonical = (path = ''): string | URL => {
@@ -73,6 +77,10 @@ export const getPermalink = (slug = '', type = 'page'): string => {
       permalink = createPath(TAG_BASE, trimSlash(slug));
       break;
 
+    /**
+     * MODIFIKASI: Memastikan tipe 'post' hanya mengambil slugnya saja 
+     * tanpa menambahkan BLOG_BASE (prefix /blog/)
+     */
     case 'post':
       permalink = createPath(trimSlash(slug));
       break;
