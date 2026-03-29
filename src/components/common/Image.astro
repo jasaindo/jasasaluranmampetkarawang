@@ -18,9 +18,10 @@ type ImageType = {
 const props = Astro.props;
 
 if (props.alt === undefined || props.alt === null) {
-  throw new Error();
+  throw new Error('Image "alt" property is required.');
 }
 
+// Konversi string ke number untuk keamanan Astro 5
 if (typeof props.width === 'string') {
   props.width = parseInt(props.width);
 }
@@ -29,6 +30,7 @@ if (typeof props.height === 'string') {
   props.height = parseInt(props.height);
 }
 
+// Default values
 if (!props.loading) {
   props.loading = 'lazy';
 }
@@ -36,6 +38,13 @@ if (!props.loading) {
 if (!props.decoding) {
   props.decoding = 'async';
 }
+
+// PERBAIKAN: Tambahkan inferSize jika height tidak ditentukan
+// Ini adalah kunci untuk memperbaiki error MissingImageDimension
+const modifiedProps = {
+  ...props,
+  inferSize: props.inferSize ?? (!props.height),
+};
 
 const _image = await findImage(props.src);
 
@@ -46,9 +55,10 @@ if (
   (_image.startsWith('http://') || _image.startsWith('https://')) &&
   isUnpicCompatible(_image)
 ) {
-  image = await getImagesOptimized(_image, props, unpicOptimizer);
+  image = await getImagesOptimized(_image, modifiedProps, unpicOptimizer);
 } else if (_image) {
-  image = await getImagesOptimized(_image, props, astroAssetsOptimizer);
+  // Gunakan modifiedProps yang mengandung inferSize
+  image = await getImagesOptimized(_image, modifiedProps, astroAssetsOptimizer);
 }
 ---
 

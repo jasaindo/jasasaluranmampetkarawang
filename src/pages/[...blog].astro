@@ -17,9 +17,7 @@ export const prerender = true;
 export async function getStaticPaths() {
   const paths = (await getStaticPathsBlogPost()) as any[];
   return paths.map((path) => ({
-    params: {
-      blog: path.params.blog,
-    },
+    params: { blog: path.params.blog },
     props: { post: path.props.post },
   }));
 }
@@ -33,8 +31,10 @@ if (!post) {
 const rendered = await render(post);
 const { Content } = rendered;
 
-// PERBAIKAN: Gunakan findImage untuk mendapatkan objek gambar (bukan hanya string URL)
-const image = await findImage(post.image);
+// Ambil gambar dengan proteksi dimensi
+const rawImage = await findImage(post.image);
+const image = rawImage;
+
 const url = getCanonical(getPermalink(post.permalink, 'post'));
 
 const metadata = merge(
@@ -44,7 +44,7 @@ const metadata = merge(
     robots: { index: blogPostRobots?.index, follow: blogPostRobots?.follow },
     openGraph: { 
       type: 'article',
-      // Jika image adalah objek (hasil findImage), gunakan .src untuk metadata OpenGraph
+      // PAKSA IMAGE URL STRING SAJA UNTUK METADATA AGAR TIDAK TRIGGER VALIDASI DIMENSI
       images: image ? [{ url: typeof image === 'object' ? image.src : image }] : undefined,
     },
   },
@@ -53,7 +53,6 @@ const metadata = merge(
 ---
 
 <Layout metadata={metadata}>
-  {/* Kirimkan objek image utuh ke SinglePost agar Astro bisa membaca width/height otomatis */}
   <SinglePost post={{ ...post, image }} url={url}>
     <Content />
   </SinglePost>
