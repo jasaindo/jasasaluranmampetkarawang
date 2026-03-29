@@ -5,6 +5,9 @@ on:
     - cron: '0 */8 * * *'
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true # Mengatasi peringatan Node.js 20
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,18 +15,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 9
-
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'pnpm'
+          node-version: 24 # Update ke versi terbaru
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4 # Update ke v4
+        with:
+          version: 10 # Menggunakan pnpm terbaru sesuai standar Anda
 
       - name: Install dependencies
+        # Kita hapus pengecekan lockfile agar robot tetap jalan meskipun lockfile tertinggal
         run: pnpm install --no-frozen-lockfile
 
       - name: Build Astro
@@ -35,4 +38,3 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git commit --allow-empty -m "Scheduled build: $(date)"
           git push origin main
-          
