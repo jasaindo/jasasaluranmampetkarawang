@@ -2,9 +2,8 @@ name: Scheduled Astro Build
 
 on:
   schedule:
-    # Berjalan setiap 8 jam (00:00, 08:00, 16:00 UTC)
     - cron: '0 */8 * * *'
-  workflow_dispatch: # Memungkinkan Anda menjalankan manual lewat tombol di GitHub
+  workflow_dispatch:
 
 jobs:
   build:
@@ -13,27 +12,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 9 # Menyesuaikan log build Anda pnpm@9.15.4
+          cache: 'pnpm'
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build Astro
         run: pnpm run build
 
       - name: Trigger Cloudflare Deploy
-        # Cloudflare Pages otomatis deploy saat ada push ke branch main.
-        # Kita membuat 'empty commit' agar Cloudflare terpancing untuk build ulang.
         run: |
-          git config --global user.name "GitHub Action Bot"
-          git config --global user.email "actions@github.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git commit --allow-empty -m "Scheduled build: $(date)"
           git push origin main
+          
