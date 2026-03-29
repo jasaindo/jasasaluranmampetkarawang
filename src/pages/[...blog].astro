@@ -1,6 +1,7 @@
 ---
 // @ts-nocheck
 import merge from 'lodash.merge';
+import { render } from 'astro:content';
 
 import Layout from '~/layouts/PageLayout.astro';
 import SinglePost from '~/components/blog/SinglePost.astro';
@@ -29,8 +30,9 @@ if (!post) {
   return Astro.redirect('/404');
 }
 
-// MENGGUNAKAN METODE RENDER BAWAAN POST (LEBIH STABIL DI ASTROWIND)
-const { Content } = await post.render();
+// KHUSUS ASTRO 5: Mengambil Content menggunakan fungsi render
+const rendered = await render(post);
+const Content = rendered.Content;
 
 const image = await findImage(post.image);
 const url = getCanonical(getPermalink(post.permalink, 'post'));
@@ -51,8 +53,11 @@ const metadata = merge(
 
 <Layout metadata={metadata}>
   <SinglePost post={{ ...post, image }} url={url}>
-    {Content ? <Content /> : <Fragment set:html={post.content || ''} />}
+    <Content />
   </SinglePost>
   <ToBlogLink />
   <RelatedPosts post={post} />
 </Layout>
+
+
+
