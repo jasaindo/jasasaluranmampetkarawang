@@ -1,18 +1,27 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import Features from '~/components/widgets/Features.astro';
+import BlogList from '~/components/blog/List.astro';
+import Headline from '~/components/blog/Headline.astro';
+import { fetchPosts } from '~/utils/blog';
 
 export const prerender = true;
 
+// Sinkronisasi Data: Mengambil semua artikel dari content/post
+const posts = await fetchPosts();
+// Batasi tampilan di Home (misal 6 artikel) agar tidak terlalu panjang
+const postsToDisplay = posts.slice(0, 6); 
+
 const metadata = {
   title: 'Jasa Saluran Mampet Karawang - Tukang No. 1 Bergaransi',
+  description: 'Solusi ahli saluran mampet, sedot tinja, dan perbaikan pipa di Karawang tanpa bongkar.',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
+  {/* 1. Bagian Hero Tetap Dipertahankan */}
   <Hero
     actions={[
       { variant: 'primary', text: 'Hubungi Kami', href: 'https://wa.me/628123456789', icon: 'tabler:brand-whatsapp' },
@@ -28,6 +37,7 @@ const metadata = {
     </Fragment>
   </Hero>
 
+  {/* 2. Bagian Layanan / Features */}
   <Features
     id="features"
     title="Layanan Unggulan Kami"
@@ -38,8 +48,22 @@ const metadata = {
     ]}
   />
 
-  <BlogLatestPosts
-    title="Tips & Informasi Terbaru"
-    information="Dapatkan edukasi seputar perawatan saluran air langsung dari ahlinya di Karawang."
-  />
+  {/* 3. Penggabungan Logika blog.astro ke dalam Index */}
+  <section class="px-6 py-12 sm:px-6 lg:px-8 lg:py-20 mx-auto max-w-4xl">
+    <Headline
+      subtitle="Dapatkan edukasi seputar perawatan saluran air langsung dari ahlinya di Karawang."
+    >
+      Artikel Jasa Saluran Mampet Terbaru
+    </Headline>
+    
+    {/* Menggunakan BlogList agar tampilan rapi seperti halaman blog asli */}
+    <BlogList posts={postsToDisplay} />
+    
+    {/* Tombol Lihat Semua Artikel (Opsional jika ingin ke halaman list lain) */}
+    {posts.length > 6 && (
+       <div class="flex justify-center mt-8">
+          <a href="/edukasi" class="btn btn-primary">Lihat Semua Artikel</a>
+       </div>
+    )}
+  </section>
 </Layout>

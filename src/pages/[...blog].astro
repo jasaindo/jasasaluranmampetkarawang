@@ -15,15 +15,20 @@ import { findImage } from '~/utils/images';
 export const prerender = true;
 
 export async function getStaticPaths() {
-  const paths = (await getStaticPathsBlogPost()) as any[];
+  const paths = await getStaticPathsBlogPost();
+  
   return paths.map((path) => ({
-    // PERBAIKAN: Gunakan parameter 'post' sesuai nama file [...post].astro
-    params: { post: path.params.blog || path.params.post }, 
-    props: { post: path.props.post },
+    // SINKRONISASI: Harus 'blog' karena nama file Anda [...blog].astro
+    params: { 
+      blog: path.params.blog || path.params.post 
+    }, 
+    props: { 
+      post: path.props.post 
+    },
   }));
 }
 
-const { post } = Astro.props as any;
+const { post } = Astro.props;
 
 if (!post) {
   return Astro.redirect('/404');
@@ -32,21 +37,23 @@ if (!post) {
 const rendered = await render(post);
 const { Content } = rendered;
 
-// Ambil gambar dengan proteksi dimensi
-const rawImage = await findImage(post.image);
-const image = rawImage;
+// Load image secara asinkron
+const image = await findImage(post.image);
 
-// getPermalink akan otomatis menghasilkan URL tanpa /blog/ karena config.yaml sudah ''
-const url = getCanonical(getPermalink(post.permalink, 'post'));
+// getPermalink() akan otomatis ke root karena BLOG_BASE sudah kosong
+const url = getCanonical(getPermalink(post.permalink));
 
 const metadata = merge(
   {
     title: post.title,
     description: post.excerpt,
-    robots: { index: blogPostRobots?.index, follow: blogPostRobots?.follow },
+    robots: { 
+      index: blogPostRobots?.index ?? true, 
+      follow: blogPostRobots?.follow ?? true 
+    },
     openGraph: { 
       type: 'article',
-      images: image ? [{ url: typeof image === 'object' ? image.src : image }] : undefined,
+      ...(image ? { images: [{ url: typeof image === 'object' ? image.src : image }] } : {}),
     },
   },
   post.metadata || {}
