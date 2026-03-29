@@ -20,12 +20,11 @@ export const cleanSlug = (text = '') =>
     .map((slug) => slugify(slug))
     .join('/');
 
-// SINKRONISASI: Paksa kosong jika Anda tidak ingin prefix di list
 export const BLOG_BASE = cleanSlug(APP_BLOG?.list?.pathname || '');
 export const CATEGORY_BASE = cleanSlug(APP_BLOG?.category?.pathname || '');
 export const TAG_BASE = cleanSlug(APP_BLOG?.tag?.pathname) || 'tag';
 
-/** * MODIFIKASI: Pastikan pattern post hanya %slug%
+/** * Menyesuaikan pattern dengan konfigurasi yaml
  */
 export const POST_PERMALINK_PATTERN = trimSlash(APP_BLOG?.post?.permalink || '%slug%');
 
@@ -75,11 +74,8 @@ export const getPermalink = (slug = '', type = 'page'): string => {
       permalink = createPath(TAG_BASE, trimSlash(slug));
       break;
 
-    /**
-     * PERBAIKAN: Tipe 'post' harus langsung ke root.
-     * Kami tidak menggunakan BLOG_BASE di sini.
-     */
     case 'post':
+      // SINKRONISASI: Menggunakan route dari config untuk folder /blog/
       permalink = trimSlash(slug);
       break;
 
@@ -106,8 +102,7 @@ export const getAsset = (path: string): string =>
     .filter((el) => !!el)
     .join('/');
 
-/** * PERBAIKAN: Definitive permalink harus cerdas. 
- * Jika permalink untuk post, jangan biarkan ada folder tambahan.
+/** * Definitive permalink tetap menggunakan BASE_PATHNAME agar sinkron dengan site config
  */
 const definitivePermalink = (permalink: string): string => {
   return createPath(BASE_PATHNAME, permalink);

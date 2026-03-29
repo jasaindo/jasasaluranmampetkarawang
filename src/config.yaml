@@ -10,8 +10,8 @@ metadata:
     template: '%s — Jasa Saluran Mampet Karawang'
   description: 'Solusi ahli untuk saluran mampet, sedot tinja, dan perbaikan pipa di wilayah Karawang dan sekitarnya.'
   robots:
-    index: true # DISARANKAN: Set true agar website terindeks Google (Karawang SEO)
-    follow: true
+    index: false # DISARANKAN: Set true agar website terindeks Google (Karawang SEO)
+    follow: false
 
 i18n:
   language: id
@@ -25,7 +25,7 @@ apps:
     relatedPostsCount: 4
     post:
       isEnabled: true
-      route: '' # DIUBAH: Dikosongkan agar URL post langsung di root (Tanpa /blog/)
+      route: 'blog'
     list:
       isEnabled: true
       route: 'blog' # Halaman daftar artikel tetap bisa diakses di /blog/
