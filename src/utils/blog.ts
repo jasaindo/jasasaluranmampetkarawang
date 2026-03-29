@@ -23,7 +23,7 @@ const generatePermalink = async ({
   const minute = String(publishDate.getMinutes()).padStart(2, '0');
   const second = String(publishDate.getSeconds()).padStart(2, '0');
 
-  // Menggunakan POST_PERMALINK_PATTERN yang sudah kita ubah di permalinks.ts
+  // Menggunakan POST_PERMALINK_PATTERN dari permalinks.ts (yang sudah kita set ke %slug%)
   const permalink = POST_PERMALINK_PATTERN.replace('%slug%', slug)
     .replace('%id%', id)
     .replace('%category%', category || '')
@@ -77,7 +77,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
   return {
     id: id,
     slug: slug,
-    // Menghasilkan permalink bersih tanpa prefix /blog/
+    // Menghasilkan permalink bersih (tanpa prefix /blog/)
     permalink: await generatePermalink({ id, slug, publishDate, category: category?.slug }),
 
     publishDate: publishDate,
@@ -187,7 +187,7 @@ export const getStaticPathsBlogPost = async () => {
   if (!isBlogEnabled || !isBlogPostRouteEnabled) return [];
   return (await fetchPosts()).flatMap((post) => ({
     params: {
-      // PERUBAHAN PENTING: Menggunakan slug murni untuk routing Astro jika di tingkat root
+      // SINKRONISASI: Properti ini harus bernama 'blog' jika file Anda [...blog].astro
       blog: post.permalink,
     },
     props: { post },
