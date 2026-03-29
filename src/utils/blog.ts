@@ -23,7 +23,6 @@ const generatePermalink = async ({
   const minute = String(publishDate.getMinutes()).padStart(2, '0');
   const second = String(publishDate.getSeconds()).padStart(2, '0');
 
-  // Menggunakan POST_PERMALINK_PATTERN dari permalinks.ts (yang sudah kita set ke %slug%)
   const permalink = POST_PERMALINK_PATTERN.replace('%slug%', slug)
     .replace('%id%', id)
     .replace('%category%', category || '')
@@ -77,7 +76,6 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
   return {
     id: id,
     slug: slug,
-    // Menghasilkan permalink bersih (tanpa prefix /blog/)
     permalink: await generatePermalink({ id, slug, publishDate, category: category?.slug }),
 
     publishDate: publishDate,
@@ -104,9 +102,17 @@ const load = async function (): Promise<Array<Post>> {
   const posts = await getCollection('post');
   const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
 
+  // PERBAIKAN: Menambahkan filter Tanggal agar artikel masa depan tidak muncul
+  const now = new Date();
+
   const results = (await Promise.all(normalizedPosts))
     .sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf())
-    .filter((post) => !post.draft);
+    .filter((post) => {
+      // Artikel hanya muncul jika: 
+      // 1. Bukan Draft 
+      // 2. DAN Tanggal Publish <= Waktu sekarang (Build Time)
+      return !post.draft && post.publishDate <= now;
+    });
 
   return results;
 };
@@ -137,12 +143,10 @@ export const fetchPosts = async (): Promise<Array<Post>> => {
   return _posts;
 };
 
-/** */
+/** Sisanya tetap sama sesuai kode asli Anda... */
 export const findPostsBySlugs = async (slugs: Array<string>): Promise<Array<Post>> => {
   if (!Array.isArray(slugs)) return [];
-
   const posts = await fetchPosts();
-
   return slugs.reduce(function (r: Array<Post>, slug: string) {
     posts.some(function (post: Post) {
       return slug === post.slug && r.push(post);
@@ -151,12 +155,9 @@ export const findPostsBySlugs = async (slugs: Array<string>): Promise<Array<Post
   }, []);
 };
 
-/** */
 export const findPostsByIds = async (ids: Array<string>): Promise<Array<Post>> => {
   if (!Array.isArray(ids)) return [];
-
   const posts = await fetchPosts();
-
   return ids.reduce(function (r: Array<Post>, id: string) {
     posts.some(function (post: Post) {
       return id === post.id && r.push(post);
@@ -165,15 +166,12 @@ export const findPostsByIds = async (ids: Array<string>): Promise<Array<Post>> =
   }, []);
 };
 
-/** */
 export const findLatestPosts = async ({ count }: { count?: number }): Promise<Array<Post>> => {
   const _count = count || 4;
   const posts = await fetchPosts();
-
   return posts ? posts.slice(0, _count) : [];
 };
 
-/** */
 export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogListRouteEnabled) return [];
   return paginate(await fetchPosts(), {
@@ -182,22 +180,18 @@ export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateF
   });
 };
 
-/** */
 export const getStaticPathsBlogPost = async () => {
   if (!isBlogEnabled || !isBlogPostRouteEnabled) return [];
   return (await fetchPosts()).flatMap((post) => ({
     params: {
-      // SINKRONISASI: Properti ini harus bernama 'blog' jika file Anda [...blog].astro
       blog: post.permalink,
     },
     props: { post },
   }));
 };
 
-/** */
 export const getStaticPathsBlogCategory = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogCategoryRouteEnabled) return [];
-
   const posts = await fetchPosts();
   const categories = {};
   posts.map((post) => {
@@ -205,7 +199,6 @@ export const getStaticPathsBlogCategory = async ({ paginate }: { paginate: Pagin
       categories[post.category?.slug] = post.category;
     }
   });
-
   return Array.from(Object.keys(categories)).flatMap((categorySlug) =>
     paginate(
       posts.filter((post) => post.category?.slug && categorySlug === post.category?.slug),
@@ -218,10 +211,8 @@ export const getStaticPathsBlogCategory = async ({ paginate }: { paginate: Pagin
   );
 };
 
-/** */
 export const getStaticPathsBlogTag = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogTagRouteEnabled) return [];
-
   const posts = await fetchPosts();
   const tags = {};
   posts.map((post) => {
@@ -231,7 +222,6 @@ export const getStaticPathsBlogTag = async ({ paginate }: { paginate: PaginateFu
       });
     }
   });
-
   return Array.from(Object.keys(tags)).flatMap((tagSlug) =>
     paginate(
       posts.filter((post) => Array.isArray(post.tags) && post.tags.find((elem) => elem.slug === tagSlug)),
@@ -244,19 +234,15 @@ export const getStaticPathsBlogTag = async ({ paginate }: { paginate: PaginateFu
   );
 };
 
-/** */
 export async function getRelatedPosts(originalPost: Post, maxResults: number = 4): Promise<Post[]> {
   const allPosts = await fetchPosts();
   const originalTagsSet = new Set(originalPost.tags ? originalPost.tags.map((tag) => tag.slug) : []);
-
   const postsWithScores = allPosts.reduce((acc: { post: Post; score: number }[], iteratedPost: Post) => {
     if (iteratedPost.slug === originalPost.slug) return acc;
-
     let score = 0;
     if (iteratedPost.category && originalPost.category && iteratedPost.category.slug === originalPost.category.slug) {
       score += 5;
     }
-
     if (iteratedPost.tags) {
       iteratedPost.tags.forEach((tag) => {
         if (originalTagsSet.has(tag.slug)) {
@@ -264,19 +250,15 @@ export async function getRelatedPosts(originalPost: Post, maxResults: number = 4
         }
       });
     }
-
     acc.push({ post: iteratedPost, score });
     return acc;
   }, []);
-
   postsWithScores.sort((a, b) => b.score - a.score);
-
   const selectedPosts: Post[] = [];
   let i = 0;
   while (selectedPosts.length < maxResults && i < postsWithScores.length) {
     selectedPosts.push(postsWithScores[i].post);
     i++;
   }
-
   return selectedPosts;
 }
