@@ -1,0 +1,64 @@
+===========================================================
+    PANDUAN TEKNIS PEMULA: JASA SALURAN MAMPET KARAWANG
+===========================================================
+Ikuti urutan ini setiap kali Anda ingin mengubah website:
+
+[LANGKAH 1: EDIT KONTEN]
+-----------------------------------------------------------
+1. Buka folder proyek di VS Code.
+2. Edit artikel di: src/content/post/ (file .md atau .mdx)
+3. Edit menu/navigasi di: src/navigation.js
+4. JANGAN LUPA: Pastikan setiap gambar yang dipanggil di kode
+   SUDAH ADA file fisiknya di folder: src/assets/images/
+
+[LANGKAH 2: MEMBERSIHKAN & MENGUJI (WAJIB)]
+-----------------------------------------------------------
+Sebelum mengirim ke internet, uji dulu di komputer Anda:
+1. Buka Terminal PowerShell di VS Code (Tombol Ctrl + `).
+2. Ketik perintah ini untuk menghapus sisa build lama:
+   > Remove-Item -Recurse -Force .astro, dist
+3. Jalankan perintah Build:
+   > pnpm run build
+
+   KONDISI A: Muncul tulisan Hijau "✓ Completed"
+              -> Lanjut ke LANGKAH 3.
+   KONDISI B: Muncul tulisan Merah "ERROR"
+              -> Baca baris errornya. Biasanya karena nama gambar 
+                 salah ketik atau file gambar belum ada di folder.
+                 Perbaiki dulu, lalu ulangi Langkah 2.
+
+[LANGKAH 3: MENGIRIM KE INTERNET (PUBLISH)]
+-----------------------------------------------------------
+Jika Build Lokal sudah SUKSES (Langkah 2), ketik urutan ini:
+1. Tandai semua perubahan:
+   > git add .
+2. Beri catatan (Bebas, tapi tanpa spasi di awal):
+   > git commit -m "update artikel baru"
+3. Kirim ke GitHub (Cloudflare akan otomatis update):
+   > git push origin main
+
+[LANGKAH 4: KEAMANAN (BACKUP)]
+-----------------------------------------------------------
+Lakukan ini minimal seminggu sekali atau setelah update besar:
+1. Di terminal, ketik:
+   > .\backup-project.ps1
+2. File cadangan Anda akan aman di: C:\Backups\
+
+===========================================================
+    TIPS ANTI-BINGUNG (GOLDEN RULES)
+===========================================================
+1. NAMA GAMBAR: Gunakan huruf kecil semua, tanpa spasi.
+   BENAR: foto-wastafel-mampet.webp
+   SALAH: Foto Wastafel Mampet.JPG (Ini akan bikin Error!)
+
+2. FORMAT GAMBAR: Selalu gunakan .webp agar website ringan.
+
+3. JANGAN TAKUT: Jika website rusak/error total setelah diedit,
+   cukup jalankan:
+   > .\restore-project.ps1
+   Website Anda akan kembali ke kondisi terakhir yang normal.
+
+4. MONITOR: Setelah 'git push', buka dashboard Cloudflare Pages
+   di browser untuk melihat proses "Building". Jika hijau, 
+   artinya perubahan sudah live di internet.
+===========================================================
