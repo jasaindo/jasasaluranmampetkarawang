@@ -1,7 +1,6 @@
 ---
 // @ts-nocheck
 import merge from 'lodash.merge';
-import { render } from 'astro:content';
 
 import Layout from '~/layouts/PageLayout.astro';
 import SinglePost from '~/components/blog/SinglePost.astro';
@@ -30,8 +29,9 @@ if (!post) {
   return Astro.redirect('/404');
 }
 
-const rendered = await render(post);
-const Content = rendered.Content;
+// MENGGUNAKAN METODE RENDER BAWAAN POST (LEBIH STABIL DI ASTROWIND)
+const { Content } = await post.render();
+
 const image = await findImage(post.image);
 const url = getCanonical(getPermalink(post.permalink, 'post'));
 
@@ -40,15 +40,18 @@ const metadata = merge(
     title: post.title,
     description: post.excerpt,
     robots: { index: blogPostRobots?.index, follow: blogPostRobots?.follow },
-    openGraph: { type: 'article' },
+    openGraph: { 
+      type: 'article',
+      images: image ? [{ url: image }] : undefined,
+    },
   },
   post.metadata || {}
 );
 ---
 
 <Layout metadata={metadata}>
-  <SinglePost post={{ ...post, image, Content }} url={url}>
-    <Content />
+  <SinglePost post={{ ...post, image }} url={url}>
+    {Content ? <Content /> : <Fragment set:html={post.content || ''} />}
   </SinglePost>
   <ToBlogLink />
   <RelatedPosts post={post} />
