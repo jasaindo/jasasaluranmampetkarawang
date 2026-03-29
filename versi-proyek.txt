@@ -1,0 +1,23 @@
+VERSI RUNTIME
+Node.js: v20.20.0
+pnpm: 9.15.4
+
+FRAMEWORK & CORE
+Astro: 5.18.1
+AstroWind: 1.0.0-beta.52
+TypeScript: 5.9.3
+
+INTEGRASI ASTRO
+Astro Tailwind: 5.1.5
+Astro Sitemap: 3.7.1
+Astro RSS: 4.0.17
+Astro MDX: 4.3.14
+Astro Icon: 1.1.5
+
+STYLING & UI
+Tailwind CSS: 3.4.19
+Tailwind Typography: 0.5.19
+Tailwind Merge: 2.6.1
+Fontsource Inter: 5.2.8
+
+

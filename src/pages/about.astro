@@ -1,0 +1,202 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Tentang Kami - Jasa Saluran Mampet Karawang',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Tentang Kami"
+    image={{
+      src: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=2070&q=80',
+      alt: 'Teknisi Ahli Saluran Mampet',
+    }}
+  >
+    <Fragment slot="title">
+      Dedikasi Kami untuk <br />
+      <span class="text-accent dark:text-white">Saluran Air Lancar & Higienis</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Jasa Saluran Mampet Karawang hadir sebagai solusi profesional bagi warga Karawang yang menghadapi masalah pipa tersumbat. Kami mengedepankan teknologi modern tanpa bongkar untuk memastikan kenyamanan hunian dan tempat bisnis Anda kembali normal dengan cepat.
+    </Fragment>
+  </Hero>
+
+  <Stats
+    title="Pencapaian Kami di Karawang"
+    stats={[
+      { title: 'Tahun Pengalaman', amount: '10+' },
+      { title: 'Kecamatan Tercover', amount: '30' },
+      { title: 'Titik Tuntas', amount: '1.5K' },
+      { title: 'Teknisi Ahli', amount: '5' },
+    ]}
+  />
+
+  <Features3
+    title="Keahlian Teknis Kami"
+    subtitle="Kami tidak hanya sekadar melancarkan, tetapi memastikan penyebab sumbatan hilang sepenuhnya menggunakan peralatan standar industri."
+    columns={3}
+    isBeforeContent={true}
+    items={[
+      {
+        title: 'Analisa Saluran',
+        description:
+          'Melakukan pengecekan jalur pipa untuk menemukan titik sumbatan yang akurat sebelum tindakan dimulai.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Pembersihan Lemak',
+        description:
+          'Menggunakan mata pisau spiral khusus untuk menghancurkan kerak lemak yang membeku di pipa dapur.',
+        icon: 'tabler:tools',
+      },
+      {
+        title: 'Penanganan Benda Asing',
+        description:
+          'Mengangkat sumbatan kain, tisu, atau benda padat lainnya yang masuk ke dalam saluran pembuangan.',
+        icon: 'tabler:trash',
+      },
+    ]}
+  />
+
+  <Features3
+    columns={3}
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Rumah Tangga',
+        description: 'Menjaga sanitasi kamar mandi dan dapur tetap lancar demi kesehatan keluarga Anda.',
+        icon: 'tabler:home',
+      },
+      {
+        title: 'Restoran & Cafe',
+        description: 'Layanan cepat agar operasional bisnis kuliner Anda tidak terganggu oleh wastafel mampet.',
+        icon: 'tabler:tools-kitchen-2',
+      },
+      {
+        title: 'Perkantoran',
+        description: 'Pemeliharaan rutin saluran pembuangan gedung untuk mencegah genangan air.',
+        icon: 'tabler:building-skyscraper',
+      },
+      {
+        title: 'Area Industri',
+        description: 'Penanganan pipa drainase di kawasan industri KIIC, KIM, dan sekitarnya.',
+        icon: 'tabler:building-factory',
+      },
+      {
+        title: 'Sekolah & Ibadah',
+        description: 'Layanan khusus untuk fasilitas umum dengan prioritas waktu pengerjaan cepat.',
+        icon: 'tabler:school',
+      },
+      {
+        title: 'Kos-kosan',
+        description: 'Solusi masalah mampet massal pada pipa induk gedung apartemen atau kos.',
+        icon: 'tabler:users',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1740&q=80',
+      alt: 'Kerja Tim Profesional',
+    }}
+  />
+
+  <Steps2
+    title="Nilai Utama Kami"
+    subtitle="Mengapa ribuan pelanggan di Karawang mempercayakan saluran air mereka kepada kami?"
+    items={[
+      {
+        title: 'Kejujuran Biaya',
+        description:
+          'Harga yang kami berikan sesuai dengan tingkat kesulitan, tanpa ada biaya tersembunyi setelah pengerjaan selesai.',
+      },
+      {
+        title: 'Teknologi Tanpa Bongkar',
+        description:
+          'Kami berkomitmen melindungi aset properti Anda dengan tidak melakukan pembongkaran lantai atau dinding.',
+      },
+      {
+        title: 'Tanggung Jawab Garansi',
+        description:
+          'Setiap pekerjaan memiliki masa garansi sebagai bukti bahwa hasil kerja kami berkualitas dan tahan lama.',
+      },
+    ]}
+  />
+
+  <Steps2
+    title="Misi Kami"
+    subtitle="Menjadi mitra terpercaya bagi warga Karawang dalam urusan sanitasi dan drainase pipa pembuangan."
+    isReversed={true}
+    callToAction={{
+      text: 'Lihat Layanan Kami',
+      href: '/services',
+    }}
+    items={[
+      {
+        title: 'Jangkauan Luas',
+        description: 'Memastikan layanan kami dapat dijangkau oleh seluruh warga di pelosok Karawang.',
+        icon: 'tabler:map-search',
+      },
+      {
+        title: 'Edukasi Pelanggan',
+        description:
+          'Memberikan tips perawatan pipa agar masalah mampet tidak terulang kembali di masa depan.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Standar Kebersihan',
+        description:
+          'Meninggalkan lokasi kerja dalam keadaan bersih dan rapi setelah masalah sumbatan teratasi.',
+        icon: 'tabler:sparkles',
+      },
+    ]}
+  />
+
+  <Features2
+    title="Area Layanan Utama"
+    tagline="Wilayah Operasional"
+    columns={4}
+    items={[
+      {
+        title: 'Karawang Kota',
+        description: 'Nagari, Karawang Kulon, Karawang Wetan, dan sekitarnya.',
+      },
+      {
+        title: 'Karawang Timur',
+        description: 'Klari, Kondangjaya, Majalaya, dan Galuh Mas.',
+      },
+      {
+        title: 'Karawang Barat',
+        description: 'Telukjambe Timur, Telukjambe Barat, dan KIIC.',
+      },
+      {
+        title: 'Cikampek',
+        description: 'Cikampek Kota, Dawuan, hingga Purwasari.',
+      },
+    ]}
+  />
+
+  <Features2
+    title="Butuh Bantuan Segera?"
+    tagline="Kontak Cepat"
+    columns={2}
+    items={[
+      {
+        title: 'WhatsApp Konsultasi',
+        description: 'Hubungi admin kami untuk penjelasan teknis dan booking jadwal.',
+        icon: 'tabler:brand-whatsapp',
+      },
+      {
+        title: 'Telepon Darurat',
+        description: 'Layanan panggilan langsung untuk penanganan mampet mendesak 24 jam.',
+        icon: 'tabler:headset',
+      },
+    ]}
+  />
+</Layout>

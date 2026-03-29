@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /
+
+# Pengecualian khusus: Izinkan Google melihat Sitemap agar tidak Error di GSC
+Allow: /sitemap-index.xml
+Allow: /sitemap-0.xml
+
+Sitemap: https://jasasaluranmampetkarawang.my.id/sitemap-index.xml

@@ -1,0 +1,32 @@
+---
+import { fetchPosts, blogPostsPerPage } from '~/utils/blog';
+import Layout from '~/layouts/PageLayout.astro';
+import BlogList from '~/components/blog/List.astro';
+import Headline from '~/components/blog/Headline.astro';
+import Pagination from '~/components/blog/Pagination.astro';
+
+export const prerender = true;
+
+const posts = await fetchPosts();
+const postsToDisplay = posts.slice(0, blogPostsPerPage);
+
+const metadata = {
+  title: 'Blog Jasa Saluran Mampet Karawang - Tips & Solusi',
+  description: 'Daftar artikel edukasi dan solusi saluran air mampet di wilayah Karawang.',
+  robots: { index: true, follow: true },
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-6 py-12 sm:px-6 lg:px-8 lg:py-20 mx-auto max-w-4xl">
+    <Headline
+      subtitle="Kumpulan tips dan panduan menangani saluran mampet secara mandiri maupun profesional."
+    >
+      Artikel Jasa Saluran Mampet
+    </Headline>
+    <BlogList posts={postsToDisplay} />
+    {posts.length > blogPostsPerPage && (
+      <Pagination prevUrl="" nextUrl="/blog/2" />
+    )}
+  </section>
+</Layout>

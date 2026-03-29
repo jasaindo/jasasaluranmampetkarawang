@@ -1,0 +1,75 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Hubungi Kami - Jasa Saluran Mampet Karawang',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText tagline="Kontak" title="Layanan Cepat 24 Jam!" />
+
+  <ContactUs
+    id="form"
+    title="Kirim Pesan atau Jadwalkan Kunjungan"
+    subtitle="Punya masalah saluran mampet yang mendesak? Isi formulir di bawah ini atau langsung hubungi kami melalui WhatsApp untuk respons yang lebih cepat."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Nama Lengkap',
+      },
+      {
+        type: 'text',
+        name: 'phone',
+        label: 'Nomor WhatsApp / HP',
+      },
+    ]}
+    textarea={{
+      label: 'Detail Masalah (Contoh: WC Mampet / Wastafel Macet)',
+    }}
+    disclaimer={{
+      label:
+        'Dengan mengirimkan formulir ini, Anda menyetujui pengumpulan informasi lokasi dan kontak untuk keperluan survei jasa.',
+    }}
+    description="Tim teknisi kami biasanya memberikan estimasi biaya dan waktu dalam waktu kurang dari 1 jam."
+  />
+
+  <Features2
+    title="Kami Siap Membantu Anda!"
+    items={[
+      {
+        title: 'Konsultasi Masalah',
+        description: `Diskusikan gejala saluran mampet Anda (air meluap, bau tidak sedap, atau bunyi aneh pada pipa) untuk mendapatkan estimasi biaya awal.`,
+      },
+      {
+        title: 'Layanan Darurat',
+        description:
+          'Kami melayani pengerjaan di hari libur dan malam hari untuk kasus mendesak seperti banjir di area dapur atau kamar mandi.',
+      },
+      {
+        title: 'Area Jangkauan',
+        description:
+          'Melayani seluruh wilayah Karawang Barat, Karawang Timur, Klari, Telukjambe, Galuh Mas, hingga Cikampek.',
+      },
+      {
+        title: 'WhatsApp / Telp',
+        description: '0812-XXXX-XXXX', // Silakan isi dengan nomor asli Anda
+        icon: 'tabler:brand-whatsapp',
+      },
+      {
+        title: 'Email Bisnis',
+        description: 'admin@jasasaluranmampetkarawang.id',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Lokasi Pusat',
+        description: 'Kabupaten Karawang, Jawa Barat, Indonesia',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+</Layout>

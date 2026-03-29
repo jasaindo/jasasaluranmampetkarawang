@@ -1,0 +1,159 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Layanan Jasa Saluran Mampet Karawang - Ahli Rooter Profesional',
+  description: 'Solusi wc mampet, wastafel tersumbat, dan pipa pembuangan lemak di Karawang. Tanpa bongkar, alat modern, dan bergaransi.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Layanan Profesional"
+    title="Solusi Saluran Mampet Karawang Tanpa Bongkar"
+    subtitle="Kami mengatasi WC mampet, wastafel tersumbat, dan pipa air kotor dengan teknologi Rooter Spiral modern. Cepat, bersih, dan bergaransi 7 hari untuk area Karawang dan sekitarnya."
+    actions={[{ variant: 'primary', text: 'Hubungi via WhatsApp', href: 'https://wa.me/62812XXXXXXXX', icon: 'tabler:brand-whatsapp' }]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1740&q=80',
+      alt: 'Jasa Saluran Mampet Karawang Profesional',
+    }}
+  />
+
+  <Features2
+    title="Layanan Unggulan Kami"
+    subtitle="Kami spesialis menangani berbagai masalah saluran air di perumahan dan industri Karawang."
+    columns={3}
+    items={[
+      {
+        title: 'WC Mampet',
+        description: 'Mengatasi closet tersumbat karena tisu, pembalut, atau benda asing tanpa harus membongkar septictank.',
+        icon: 'tabler:droplet',
+      },
+      {
+        title: 'Wastafel Dapur',
+        description: 'Pembersihan pipa pembuangan lemak sisa cucian piring yang mengeras dan menyumbat aliran air.',
+        icon: 'tabler:tools-kitchen-2',
+      },
+      {
+        title: 'Floor Drain / Kamar Mandi',
+        description: 'Melancarkan lubang pembuangan air kamar mandi yang mampet akibat rontokan rambut atau kotoran.',
+        icon: 'tabler:bath',
+      },
+      {
+        title: 'Talang Air Hujan',
+        description: 'Membersihkan pipa talang dari endapan pasir, lumut, atau sampah daun yang memicu kebocoran atap.',
+        icon: 'tabler:cloud-rain',
+      },
+      {
+        title: 'Bak Kontrol',
+        description: 'Normalisasi bak kontrol yang penuh endapan semen atau sampah pasca renovasi rumah.',
+        icon: 'tabler:settings-automation',
+      },
+      {
+        title: 'Pipa Air Bersih',
+        description: 'Pembersihan lumut atau kerak dalam pipa air bersih yang membuat debit air keran mengecil.',
+        icon: 'tabler:refresh',
+      },
+    ]}
+  />
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Peralatan Rooter Modern',
+        description: 'Kami menggunakan mesin drain cleaner spiral standar Ridgid yang mampu menjangkau lekukan pipa terdalam.',
+        icon: 'tabler:device-floppy',
+      },
+      {
+        title: 'Teknisi Berpengalaman',
+        description: 'Tim kami ahli dalam memetakan jalur instalasi pipa tanpa perlu merusak keramik atau ubin rumah Anda.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Hemat Biaya & Waktu',
+        description: 'Dibandingkan metode bongkar manual, layanan kami jauh lebih ekonomis dan pengerjaan hanya hitungan jam.',
+        icon: 'tabler:coin',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1621905252507-b354bcadcabc?auto=format&fit=crop&w=870&q=80',
+      alt: 'Alat Rooter Modern Karawang',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Kenapa Harus Kami?</h3>
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Garansi Pekerjaan',
+        description: 'Kami memberikan jaminan kelancaran. Jika dalam waktu singkat mampet kembali, kami datang lagi gratis.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Respon Cepat 24 Jam',
+        description: 'Masalah mampet tidak bisa menunggu. Kami siap meluncur ke lokasi Anda kapan saja diperlukan.',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Area Klari & Telukjambe',
+        description: 'Prioritas layanan untuk seluruh kecamatan di Karawang, termasuk kawasan industri KIIC dan KIM.',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?auto=format&fit=crop&w=774&q=80',
+      alt: 'Layanan Cepat Karawang',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Komitmen Layanan</h3>
+    </Fragment>
+  </Content>
+
+  <Testimonials
+    title="Apa Kata Warga Karawang?"
+    testimonials={[
+      {
+        testimonial: `WC mampet parah di rumah Klari langsung lancar dalam 30 menit. Tidak pakai bongkar lantai sama sekali. Sangat puas!`,
+        name: 'Heri Kusuma',
+        job: 'Warga Klari',
+        image: { src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&w=400&h=400&q=80', alt: 'Heri Kusuma' },
+      },
+      {
+        testimonial: `Langganan untuk bersihkan pipa lemak di restoran kami daerah Galuh Mas. Alatnya canggih dan teknisinya sopan.`,
+        name: 'Siti Aminah',
+        job: 'Pemilik Resto',
+        image: { src: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&w=400&h=400&q=80', alt: 'Siti Aminah' },
+      },
+      {
+        testimonial: `Sudah panggil tukang biasa gagal, pakai jasa ini langsung tembus mampetnya. Garansinya beneran dikasih.`,
+        name: 'Budi Santoso',
+        job: 'Warga Telukjambe',
+        image: { src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&w=400&h=400&q=80', alt: 'Budi Santoso' },
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Pesan Jasa Sekarang',
+        href: 'https://wa.me/62812XXXXXXXX',
+        icon: 'tabler:brand-whatsapp',
+      },
+    ]}
+    title="Jangan Biarkan Mampet Merusak Hari Anda"
+    subtitle="Hubungi Ahli Saluran Mampet Karawang sekarang juga. Konsultasi Gratis!"
+  />
+</Layout>

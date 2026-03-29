@@ -1,0 +1,38 @@
+site:
+  name: 'Jasa Saluran Mampet Karawang'
+  site: 'https://jasasaluranmampetkarawang.my.id'
+  base: '/'
+  trailingSlash: false
+
+metadata:
+  title:
+    default: 'Jasa Saluran Mampet Karawang - Tukang No 1 di karawang'
+    template: '%s — Jasa Saluran Mampet Karawang'
+  description: 'Solusi ahli untuk saluran mampet, sedot tinja, dan perbaikan pipa di wilayah Karawang dan sekitarnya.'
+  robots:
+    index: false
+    follow: false
+
+i18n:
+  language: id
+  textDirection: ltr
+
+apps:
+  blog:
+    isEnabled: true
+    postsPerPage: 6
+    isRelatedPostsEnabled: true
+    relatedPostsCount: 4
+    post:
+      isEnabled: true
+    list:
+      isEnabled: true
+    category:
+      isEnabled: true
+    tag:
+      isEnabled: true
+
+analytics:
+  vendors:
+    googleAnalytics:
+      id: null

@@ -1,0 +1,48 @@
+===========================================================
+   PANDUAN DARURAT: JASA SALURAN MAMPET KARAWANG
+===========================================================
+
+ingat ! sebelum Backups
+sebaiknya tutup DULU VSCODE.
+sebaiknya tutup DULU SEMUA DI EXPLORER !!!
+barulah memulai !!!
+(itu diatas adalah langkah sebelumnya)
+(langkah dibawah adalah jika sudah pemulihan)
+Langkah 3: Verifikasi Pasca-Pemulihan
+Setelah tulisan hijau "--- SELESAI! ---" muncul, lakukan cek fisik:
+
+Buka folder C:\jasasaluranmampetkarawang.
+
+Pastikan folder node_modules sudah muncul kembali (ini bukti pnpm install berhasil).
+
+Buka PowerShell di folder tersebut dan jalankan:
+
+PowerShell
+pnpm run dev
+Buka browser di localhost:4321. Jika blog muncul dengan normal, pemulihan 100% Sukses.
+
+
+
+1. MAU AMANKAN DATA (BACKUP)?
+   - Buka folder: C:\jasasaluranmampetkarawang
+   - Klik kanan: selalu-ku-cadangkan.ps1
+   - Pilih: "Run with PowerShell"
+   - HASIL: File .zip baru muncul di C:\Backups-Saluran-Mampet
+
+2. MAU BERSIHKAN / PULIHKAN BLOG (RESTORE)?
+   - Buka folder: C:\Backups-Saluran-Mampet
+   - Klik kanan: Pulihkan-Blog.ps1
+   - Pilih: "Run with PowerShell"
+   - HASIL: Folder proyek Anda yang rusak akan diganti yang baru.
+
+3. MAU KIRIM KE INTERNET (SYNC)?
+   - Buka PowerShell di folder proyek.
+   - Ketik: git add .
+   - Ketik: git commit -m "update"
+   - Ketik: git push origin main
+   - HASIL: Blog terupdate di Cloudflare.
+
+CATATAN: 
+Selalu pastikan ada file pnpm-lock.yaml di dalam folder proyek 
+agar blog tidak error saat build.
+===========================================================

@@ -1,0 +1,55 @@
+---
+// @ts-nocheck
+import merge from 'lodash.merge';
+import { render } from 'astro:content';
+
+import Layout from '~/layouts/PageLayout.astro';
+import SinglePost from '~/components/blog/SinglePost.astro';
+import ToBlogLink from '~/components/blog/ToBlogLink.astro';
+import RelatedPosts from '~/components/blog/RelatedPosts.astro';
+
+import { getCanonical, getPermalink } from '~/utils/permalinks';
+import { getStaticPathsBlogPost, blogPostRobots } from '~/utils/blog';
+import { findImage } from '~/utils/images';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const paths = (await getStaticPathsBlogPost()) as any[];
+  return paths.map((path) => ({
+    params: {
+      blog: path.params.blog.replaceAll('blog/', '').replace(/\/$/, '') || undefined,
+    },
+    props: { post: path.props.post },
+  }));
+}
+
+const { post } = Astro.props as any;
+
+if (!post) {
+  return Astro.redirect('/404');
+}
+
+const rendered = await render(post);
+const Content = rendered.Content;
+const image = await findImage(post.image);
+const url = getCanonical(getPermalink(post.permalink, 'post'));
+
+const metadata = merge(
+  {
+    title: post.title,
+    description: post.excerpt,
+    robots: { index: blogPostRobots?.index, follow: blogPostRobots?.follow },
+    openGraph: { type: 'article' },
+  },
+  post.metadata || {}
+);
+---
+
+<Layout metadata={metadata}>
+  <SinglePost post={{ ...post, image, Content }} url={url}>
+    <Content />
+  </SinglePost>
+  <ToBlogLink />
+  <RelatedPosts post={post} />
+</Layout>

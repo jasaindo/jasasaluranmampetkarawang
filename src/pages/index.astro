@@ -1,0 +1,45 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import Features from '~/components/widgets/Features.astro';
+
+export const prerender = true;
+
+const metadata = {
+  title: 'Jasa Saluran Mampet Karawang - Tukang No. 1 Bergaransi',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    actions={[
+      { variant: 'primary', text: 'Hubungi Kami', href: 'https://wa.me/628123456789', icon: 'tabler:brand-whatsapp' },
+      { text: 'Lihat Layanan', href: '#features' },
+    ]}
+    image={{ src: '~/assets/images/default.jpg', alt: 'Jasa Saluran Mampet Karawang' }}
+  >
+    <Fragment slot="title">
+      Solusi Cepat <span class="text-accent dark:text-white highlight">Saluran Mampet</span> di Karawang
+    </Fragment>
+    <Fragment slot="subtitle">
+      Ahli pipa tersumbat, sedot WC, dan perbaikan saluran air dengan alat modern tanpa bongkar. Melayani wilayah Karawang, Cikampek, hingga Rengasdengklok.
+    </Fragment>
+  </Hero>
+
+  <Features
+    id="features"
+    title="Layanan Unggulan Kami"
+    items={[
+      { title: 'Saluran Wastafel', description: 'Mengatasi wastafel mampet akibat lemak dan sisa makanan.', icon: 'tabler:droplet' },
+      { title: 'Pipa Kamar Mandi', description: 'Melancarkan pembuangan air kamar mandi yang tergenang.', icon: 'tabler:tool' },
+      { title: 'Sedot Septic Tank', description: 'Layanan sedot tinja bersih dan tuntas.', icon: 'tabler:truck' },
+    ]}
+  />
+
+  <BlogLatestPosts
+    title="Tips & Informasi Terbaru"
+    information="Dapatkan edukasi seputar perawatan saluran air langsung dari ahlinya di Karawang."
+  />
+</Layout>
