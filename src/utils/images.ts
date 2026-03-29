@@ -52,7 +52,7 @@ export const findImage = async (
 /** */
 export const adaptOpenGraphImages = async (
   openGraph: OpenGraph = {},
-  astroSite: URL | undefined = new URL('https://jasasaluranmampetkarawang.web.id') // Gunakan domain SSOT Anda
+  astroSite: URL | undefined = new URL('https://jasasaluranmampetkarawang.my.id') // Gunakan domain SSOT Anda
 ): Promise<OpenGraph> => {
   if (!openGraph?.images?.length) {
     return openGraph;

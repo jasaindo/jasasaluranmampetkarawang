@@ -27,10 +27,10 @@ const jsonLd = {
   name: 'Jasa Saluran Mampet Karawang Tanpa Bongkar',
   description:
     'Solusi ahli pelancaran saluran air, Sedot WC Karawang, dan pipa mampet tanpa bongkar di seluruh wilayah Karawang.',
-  url: 'https://jasasaluranmampetkarawang.web.id',
+  url: 'https://jasasaluranmampetkarawang.my.id',
   telephone: '+628123456789012',
   priceRange: 'Rp',
-  image: 'https://jasasaluranmampetkarawang.web.id/_astro/hero-image.webp',
+  image: 'https://jasasaluranmampetkarawang.my.id/_astro/hero-image.webp',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Jl. Raya Karawang',
@@ -63,7 +63,7 @@ const jsonLd = {
   <Fragment slot="head">
     <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://jasasaluranmampetkarawang.web.id" />
+    <link rel="canonical" href="https://jasasaluranmampetkarawang.my.id" />
     
     {/* TAMBALAN KRITIKAL: Preload dengan fetchpriority tinggi untuk menekan LCP */}
     <link rel="preload" as="image" href={heroImagePath} fetchpriority="high" />

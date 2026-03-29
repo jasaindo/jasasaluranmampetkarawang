@@ -1,8 +1,18 @@
 User-agent: *
-Disallow: /
+Allow: /
 
-# Pengecualian khusus: Izinkan Google melihat Sitemap agar tidak Error di GSC
-Allow: /sitemap-index.xml
-Allow: /sitemap-0.xml
+# Jangan biarkan Google mengindeks folder aset internal
+Disallow: /_astro/
+Disallow: /api/
+Disallow: /admin/
+Disallow: /node_modules/
+
+# Jangan biarkan Google mengindeks hasil pencarian (jika ada fitur search)
+Disallow: /search/
+Disallow: /search?*
+
+# Khusus untuk bot AI (Opsional: Jika tidak ingin konten dicolong bot AI)
+User-agent: GPTBot
+Disallow: /
 
 Sitemap: https://jasasaluranmampetkarawang.my.id/sitemap-index.xml

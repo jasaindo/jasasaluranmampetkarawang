@@ -1,13 +1,10 @@
 ---
 import merge from 'lodash.merge';
 import { AstroSeo } from '@astrolib/seo';
-
 import type { Props as AstroSeoProps } from '@astrolib/seo';
-
 import { SITE, METADATA, I18N } from 'astrowind:config';
 import type { MetaData } from '~/types';
 import { getCanonical } from '~/utils/permalinks';
-
 import { adaptOpenGraphImages } from '~/utils/images';
 
 export interface Props extends MetaData {
@@ -29,8 +26,9 @@ const seoProps: AstroSeoProps = merge(
     title: '',
     titleTemplate: '%s',
     canonical: canonical,
-    noindex: true,
-    nofollow: true,
+    // PERBAIKAN: Set default ke FALSE agar gerbang terbuka secara global
+    noindex: false, 
+    nofollow: false,
     description: undefined,
     openGraph: {
       url: canonical,
@@ -46,6 +44,7 @@ const seoProps: AstroSeoProps = merge(
   {
     title: METADATA?.title?.default,
     titleTemplate: METADATA?.title?.template,
+    // Mengambil nilai kebalikan (!) dari config.yaml (index: true menjadi noindex: false)
     noindex: typeof METADATA?.robots?.index !== 'undefined' ? !METADATA.robots.index : undefined,
     nofollow: typeof METADATA?.robots?.follow !== 'undefined' ? !METADATA.robots.follow : undefined,
     description: METADATA?.description,
