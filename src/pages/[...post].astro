@@ -17,7 +17,8 @@ export const prerender = true;
 export async function getStaticPaths() {
   const paths = (await getStaticPathsBlogPost()) as any[];
   return paths.map((path) => ({
-    params: { blog: path.params.blog },
+    // PERBAIKAN: Gunakan parameter 'post' sesuai nama file [...post].astro
+    params: { post: path.params.blog || path.params.post }, 
     props: { post: path.props.post },
   }));
 }
@@ -35,6 +36,7 @@ const { Content } = rendered;
 const rawImage = await findImage(post.image);
 const image = rawImage;
 
+// getPermalink akan otomatis menghasilkan URL tanpa /blog/ karena config.yaml sudah ''
 const url = getCanonical(getPermalink(post.permalink, 'post'));
 
 const metadata = merge(
@@ -44,7 +46,6 @@ const metadata = merge(
     robots: { index: blogPostRobots?.index, follow: blogPostRobots?.follow },
     openGraph: { 
       type: 'article',
-      // PAKSA IMAGE URL STRING SAJA UNTUK METADATA AGAR TIDAK TRIGGER VALIDASI DIMENSI
       images: image ? [{ url: typeof image === 'object' ? image.src : image }] : undefined,
     },
   },
