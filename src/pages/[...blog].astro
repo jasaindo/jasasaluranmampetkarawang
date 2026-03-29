@@ -18,7 +18,7 @@ export async function getStaticPaths() {
   const paths = (await getStaticPathsBlogPost()) as any[];
   return paths.map((path) => ({
     params: {
-      blog: path.params.blog.replaceAll('blog/', '').replace(/\/$/, '') || undefined,
+      blog: path.params.blog,
     },
     props: { post: path.props.post },
   }));
@@ -30,10 +30,10 @@ if (!post) {
   return Astro.redirect('/404');
 }
 
-// KHUSUS ASTRO 5: Mengambil Content menggunakan fungsi render
 const rendered = await render(post);
-const Content = rendered.Content;
+const { Content } = rendered;
 
+// PERBAIKAN: Gunakan findImage untuk mendapatkan objek gambar (bukan hanya string URL)
 const image = await findImage(post.image);
 const url = getCanonical(getPermalink(post.permalink, 'post'));
 
@@ -44,7 +44,8 @@ const metadata = merge(
     robots: { index: blogPostRobots?.index, follow: blogPostRobots?.follow },
     openGraph: { 
       type: 'article',
-      images: image ? [{ url: image }] : undefined,
+      // Jika image adalah objek (hasil findImage), gunakan .src untuk metadata OpenGraph
+      images: image ? [{ url: typeof image === 'object' ? image.src : image }] : undefined,
     },
   },
   post.metadata || {}
@@ -52,12 +53,10 @@ const metadata = merge(
 ---
 
 <Layout metadata={metadata}>
+  {/* Kirimkan objek image utuh ke SinglePost agar Astro bisa membaca width/height otomatis */}
   <SinglePost post={{ ...post, image }} url={url}>
     <Content />
   </SinglePost>
   <ToBlogLink />
   <RelatedPosts post={post} />
 </Layout>
-
-
-
