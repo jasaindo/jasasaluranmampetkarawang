@@ -14,7 +14,8 @@ export interface Props {
 const { post } = Astro.props;
 const image = await findImage(post.image);
 
-const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : '';
+// MODIFIKASI: Menghapus parameter 'post' agar link mengarah ke root
+const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink) : '';
 ---
 
 <article
