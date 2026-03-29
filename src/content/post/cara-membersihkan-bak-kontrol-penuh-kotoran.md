@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-04-06T06:00:00Z
+publishDate: 2026-03-06T06:00:00Z
 title: 'Cara Membersihkan Bak Kontrol yang Penuh Kotoran - Panduan Sanitasi Mandiri'
 excerpt: 'Bak kontrol rumah Anda penuh lumpur dan lemak? Pelajari cara membersihkannya dengan benar agar tidak menyumbat pipa utama. Temukan tips perawatan bak kontrol agar rumah bebas bau got.'
 image: ~/assets/images/jasa-saluran-mampet.webp
