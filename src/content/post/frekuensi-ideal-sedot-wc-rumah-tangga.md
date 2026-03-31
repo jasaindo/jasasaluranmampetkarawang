@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-04-15T14:00:00Z
+publishDate: 2026-04-03T00:00:00Z
 title: 'Frekuensi Ideal Sedot WC Rumah Tangga - Kapan Sebaiknya Dikuras?'
 excerpt: 'Jangan tunggu WC mampet! Pelajari panduan frekuensi ideal sedot WC untuk rumah tangga berdasarkan jumlah penghuni dan kapasitas septic tank agar sanitasi tetap lancar.'
 image: ~/assets/images/jasa-saluran-mampet.webp

@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-04-04T22:00:00Z
+publishDate: 2026-03-31T22:00:00Z
 title: 'Cara Mengatasi Pipa Pembuangan Tersumbat Semen - Solusi Tanpa Bongkar Jalur'
 excerpt: 'Sisa semen proyek renovasi masuk ke pipa pembuangan? Jangan panik! Pelajari teknik profesional menghancurkan sumbatan semen tanpa bongkar menggunakan mesin mekanik khusus.'
 image: ~/assets/images/jasa-saluran-mampet.webp

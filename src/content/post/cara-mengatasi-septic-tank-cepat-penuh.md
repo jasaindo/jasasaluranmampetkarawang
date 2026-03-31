@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-04-12T14:00:00Z
+publishDate: 2026-03-31T14:00:00Z
 title: 'Cara Mengatasi Septic Tank Cepat Penuh - Solusi Tuntas Tanpa Bongkar'
 excerpt: 'Septic tank Anda sering penuh padahal baru dikuras? Pelajari penyebab teknis septic tank cepat penuh dan cara mengatasinya agar daya serap tanah kembali normal dan WC lancar.'
 image: ~/assets/images/jasa-saluran-mampet.webp

@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-04-14T14:00:00Z
+publishDate: 2026-03-29T22:00:00Z
 title: 'Cara Kuras Lumpur Tinja Padat Mengeras - Teknik Menghancurkan Kerak Septic Tank'
 excerpt: 'Septic tank Anda sudah lama tidak dikuras dan lumpurnya membatu? Pelajari cara kuras lumpur tinja padat mengeras dengan metode water jetting dan vakum bertenaga tinggi.'
 image: ~/assets/images/jasa-saluran-mampet.webp

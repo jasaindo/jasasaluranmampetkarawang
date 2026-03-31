@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-04-05T22:00:00Z
+publishDate: 2026-04-06T22:08:00Z
 title: 'Masalah Pipa Mampet pada Gedung Bertingkat - Tantangan Teknis dan Solusi Akurat'
 excerpt: 'Menangani saluran mampet di ruko atau gedung bertingkat butuh keahlian khusus. Pelajari penyebab sumbatan pada pipa vertikal dan solusi mesin Rooter tanpa bongkar yang aman bagi bangunan Anda.'
 image: ~/assets/images/jasa-saluran-mampet.webp

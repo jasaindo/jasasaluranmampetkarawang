@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-03-02T06:00:00Z
+publishDate: 2026-03-29T06:15:00Z
 title: 'Biaya Jasa Pelancar Saluran vs Bongkar Lantai - Mana yang Lebih Hemat?'
 excerpt: 'Bingung antara memanggil jasa pelancar saluran atau membongkar lantai? Bandingkan estimasi biaya, risiko, dan efisiensi waktu antara metode Rooter modern dengan renovasi manual.'
 image: ~/assets/images/jasa-saluran-mampet.webp

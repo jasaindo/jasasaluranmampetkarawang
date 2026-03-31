@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-04-04T06:00:00Z
+publishDate: 2026-04-07T00:16:00Z
 title: 'Mengenal Saponifikasi - Rahasia Mengapa Lemak Bisa Menjadi Batu di Dalam Pipa'
 excerpt: 'Pipa wastafel mampet total dan keras seperti semen? Pelajari proses Saponifikasi, fenomena kimia di mana lemak dapur berubah menjadi batu, dan cara mengatasinya secara profesional.'
 image: ~/assets/images/jasa-saluran-mampet.webp

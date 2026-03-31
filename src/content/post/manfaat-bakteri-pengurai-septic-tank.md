@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-04-12T06:00:00Z
+publishDate: 2026-04-06T22:00:00Z
 title: 'Manfaat Bakteri Pengurai Septic Tank - Solusi Alami Tanpa Bahan Kimia'
 excerpt: 'Ingin septic tank tidak cepat penuh? Pelajari manfaat bakteri pengurai untuk mengolah limbah rumah tangga secara alami, menghilangkan bau, dan menjaga resapan tetap lancar.'
 image: ~/assets/images/jasa-saluran-mampet.webp

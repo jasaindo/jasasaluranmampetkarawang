@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-04-08T06:00:00Z
+publishDate: 2026-04-06T22:16:00Z
 title: 'Mengatasi Bau Tak Sedap dari Lubang Pembuangan - Solusi Permanen Rumah Segar'
 excerpt: 'Rumah sering tercium bau got dari saluran air? Pelajari penyebab teknis bau tak sedap dari lubang pembuangan dan cara mengatasinya secara tuntas tanpa parfum ruangan.'
 image: ~/assets/images/jasa-saluran-mampet.webp

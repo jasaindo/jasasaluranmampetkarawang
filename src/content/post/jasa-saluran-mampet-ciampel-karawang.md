@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-03-01
+publishDate: 2026-03-05T08:00:00Z
 title: 'Jasa Saluran Mampet Ciampel Karawang - Ahli Pelancar Pipa Tanpa Bongkar'
 excerpt: 'Layanan jasa saluran mampet profesional di Ciampel, Karawang. Mengatasi WC, wastafel, dan drainase tersumbat dengan mesin Rooter modern. Cepat, bersih, dan bergaransi!'
 image: ~/assets/images/jasa-saluran-mampet.webp

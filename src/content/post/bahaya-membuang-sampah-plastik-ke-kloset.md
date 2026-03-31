@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-04-16T06:00:00Z
+publishDate: 2026-03-30T06:14:00Z
 title: 'Bahaya Membuang Sampah Plastik ke Kloset - Solusi WC Mampet Tuntas'
 excerpt: 'Sering membuang sampah kecil ke kloset? Pelajari bahaya membuang sampah plastik ke kloset yang dapat merusak sistem septic tank dan menyebabkan mampet permanen.'
 image: ~/assets/images/jasa-saluran-mampet.webp

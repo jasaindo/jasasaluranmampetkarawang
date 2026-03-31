@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-04-18T14:00:00Z
+publishDate: 2026-04-02T01:00:00Z
 title: 'Estimasi Biaya Sedot Tinja Borongan - Transparansi Harga Tanpa Jebakan'
 excerpt: 'Ingin tahu berapa biaya sedot WC terbaru? Pelajari estimasi biaya sedot tinja borongan untuk menghindari praktik penipuan volume dan memastikan septic tank Anda bersih total.'
 image: ~/assets/images/jasa-saluran-mampet.webp

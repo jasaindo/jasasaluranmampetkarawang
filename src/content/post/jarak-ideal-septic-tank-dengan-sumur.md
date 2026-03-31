@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-04-13T06:00:00Z
+publishDate: 2026-04-05T00:00:00Z
 title: 'Jarak Ideal Septic Tank dengan Sumur - Standar Kesehatan Lingkungan'
 excerpt: 'Berapa jarak aman antara septic tank dan sumur air minum? Pelajari standar kesehatan lingkungan untuk mencegah kontaminasi bakteri E. coli dan menjaga kualitas air rumah Anda.'
 image: ~/assets/images/jasa-saluran-mampet.webp

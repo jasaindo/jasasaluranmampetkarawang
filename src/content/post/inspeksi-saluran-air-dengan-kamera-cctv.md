@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-04-04T14:00:00Z
+publishDate: 2026-04-03T08:00:00Z
 title: 'Inspeksi Saluran Air dengan Kamera CCTV - Deteksi Akurat Tanpa Tebak-tebakan'
 excerpt: 'Ingin tahu apa yang menyumbat pipa Anda? Gunakan jasa inspeksi kamera CCTV saluran air. Deteksi akurat titik mampet, pipa pecah, atau akar pohon tanpa perlu bongkar lantai secara acak.'
 image: ~/assets/images/jasa-saluran-mampet.webp

@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-04-18T06:00:00Z
+publishDate: 2026-04-01T06:00:00Z
 title: 'Cara Menghilangkan Bau WC Metode Alami - Solusi Segar Tanpa Kimia'
 excerpt: 'Kamar mandi sering berbau got meskipun sudah dibersihkan? Pelajari cara menghilangkan bau WC metode alami yang ampuh, aman bagi pipa, dan ramah lingkungan.'
 image: ~/assets/images/jasa-saluran-mampet.webp

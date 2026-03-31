@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-04-10T06:00:00Z
+publishDate: 2026-03-29T06:09:00Z
 title: 'Cara Kerja Truk Vacuum Sedot Tinja - Teknologi Kebersihan Modern'
 excerpt: 'Ingin tahu bagaimana limbah septic tank dibersihkan secara total? Pelajari cara kerja truk vacuum sedot tinja yang menggunakan teknologi tekanan udara tinggi untuk hasil yang bersih dan tanpa bau.'
 image: ~/assets/images/jasa-saluran-mampet.webp

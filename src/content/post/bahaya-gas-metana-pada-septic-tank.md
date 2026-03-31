@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-04-11T14:00:00Z
+publishDate: 2026-03-30T14:00:00Z
 title: 'Bahaya Gas Metana pada Septic Tank - Risiko Tersembunyi di Bawah Tanah'
 excerpt: 'Septic tank bukan sekadar penampungan limbah, tapi juga pabrik gas berbahaya. Pelajari risiko gas metana, potensi ledakan, dan cara menjaga keamanan sanitasi rumah Anda.'
 image: ~/assets/images/jasa-saluran-mampet.webp

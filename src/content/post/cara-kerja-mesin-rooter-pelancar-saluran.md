@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-04-02T22:00:00Z
+publishDate: 2026-03-29T22:08:00Z
 title: 'Cara Kerja Mesin Rooter Pelancar Saluran - Teknologi Modern Pembersih Pipa'
 excerpt: 'Temukan rahasia di balik kecanggihan mesin Rooter untuk melancarkan saluran air mampet. Pelajari bagaimana teknologi kabel spiral baja menghancurkan sumbatan tanpa merusak pipa rumah Anda.'
 image: ~/assets/images/jasa-saluran-mampet.webp

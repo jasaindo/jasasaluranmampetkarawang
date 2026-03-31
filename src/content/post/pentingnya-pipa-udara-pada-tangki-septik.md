@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-04-17T06:00:00Z
+publishDate: 2026-04-08T16:16:00Z
 title: 'Pentingnya Pipa Udara Pada Tangki Septik - Fungsi dan Risiko Keamanan'
 excerpt: 'Sering mengabaikan pipa kecil di atas septic tank? Pelajari pentingnya pipa udara pada tangki septik untuk kelancaran pembuangan dan mencegah risiko ledakan gas metana.'
 image: ~/assets/images/jasa-saluran-mampet.webp

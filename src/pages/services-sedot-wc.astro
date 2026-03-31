@@ -1,0 +1,171 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+
+const metadata = {
+  title: 'Jasa Pelancaran Saluran Pipa Mampet Karawang | Tanpa Bongkar & Bergaransi',
+  ignoreTitleTemplate: true,
+  description:
+    'Solusi pipa mampet di Karawang? Saya ahli pelancaran pipa paralon/PVC menggunakan mesin Rooter modern tanpa bongkar. Layanan 24 jam untuk rumah & industri di Karawang.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Ahli Pipa Mampet Karawang"
+    title="Jasa Pelancaran Saluran Pipa Mampet Karawang: Solusi Tanpa Bongkar"
+    subtitle="Pipa mampet bukan sekadar masalah air menggenang, tapi ancaman kesehatan dan struktur bangunan. Saya hadir dengan teknologi mesin Rooter untuk melancarkan pipa air kotor Anda secara tuntas, bersih, dan bergaransi resmi."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Konsultasi Gratis (WA)',
+        href: 'https://wa.me/628123456789012',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+      { text: 'Daftar Harga', href: '#harga' },
+    ]}
+    image={{
+      src: '~/assets/images/layanan-saluran-mampet.webp',
+      alt: 'Proses kerja teknisi sanitasi',
+    }}
+  />
+
+  <Features
+    id="penyebab"
+    tagline="Analisis Masalah"
+    title="Penyebab Utama Pipa Saluran Mampet di Karawang"
+    subtitle="Kenali musuh utama pipa Anda agar tidak terulang kembali di masa depan."
+    items={[
+      {
+        title: 'Lemak Domestik (Grease)',
+        description:
+          'Sisa minyak goreng dan sabun yang mendingin lalu mengeras seperti lilin di dalam saluran pipa dapur.',
+        icon: 'tabler:droplet-half-2',
+      },
+      {
+        title: 'Intrusi Akar Pohon',
+        description: 'Sering terjadi di pipa got luar rumah; akar pohon masuk melalui celah sambungan pipa yang retak.',
+        icon: 'tabler:leaf',
+      },
+      {
+        title: 'Endapan Material Pasir',
+        description: 'Sisa semen atau pasir dari renovasi rumah yang masuk ke floor drain dan mengendap di dasar pipa.',
+        icon: 'tabler:shovel',
+      },
+      {
+        title: 'Gumpalan Rambut',
+        description:
+          'Penyebab utama mampet di floor drain kamar mandi; helai rambut yang tersangkut di sambungan pipa dan mengikat sisa residu sabun.',
+        icon: 'tabler:circles',
+      },
+    ]}
+  />
+
+  <Content
+    tagline="Teknologi Rooter"
+    title="Metode Pembersihan Pipa Tanpa Bongkar"
+    subtitle="Keunggulan jasa kami dibandingkan metode manual atau sedot biasa."
+    items={[
+      {
+        title: 'Jangkauan Hingga 30 Meter',
+        description: 'Mesin kami mampu membersihkan sumbatan jauh di dalam tanah tanpa harus menggali keramik.',
+      },
+      {
+        title: 'Aman untuk Pipa Paralon',
+        description: 'Sling baja fleksibel hanya menghancurkan sumbatan, bukan melubangi pipa PVC Anda.',
+      },
+      {
+        title: 'Pembersihan 360 Derajat',
+        description:
+          'Mata pisau khusus berputar untuk mengikis kerak di seluruh dinding pipa, bukan hanya melubangi sumbatan.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/pelancaran-saluran-kamar-mandi-3.jpg',
+      alt: 'Pelancaran salurab kamar mandi 3',
+    }}
+  />
+
+  <Steps
+    title="Prosedur Pelancaran Pipa Profesional Kami"
+    items={[
+      {
+        title: 'Pengecekan Jalur (Mapping)',
+        description: 'Kami mencari tahu ke mana arah pipa dan di mana letak bak kontrol (manhole) berada.',
+        icon: 'tabler:map-search',
+      },
+      {
+        title: 'Penghancuran Sumbatan (Cleaning)',
+        description:
+          'Proses memasukkan mesin rooter untuk menghancurkan lemak, menarik rambut, atau mengeluarkan benda asing.',
+        icon: 'tabler:tool',
+      },
+      {
+        title: 'Pembilasan (Flushing)',
+        description: 'Pipa digelontor dengan air volume besar untuk membuang sisa-sisa kotoran yang telah dihancurkan.',
+        icon: 'tabler:ripple',
+      },
+      {
+        title: 'Pemberian Garansi',
+        description:
+          'Pekerjaan selesai jika air sudah mengalir deras. Anda mendapatkan garansi 30 hari sebagai jaminan kualitas.',
+        icon: 'tabler:shield-check',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="FAQ: Jasa Pipa Mampet Karawang"
+    subtitle="Pertanyaan yang paling sering diajukan oleh pelanggan kami di Karawang Barat, Timur, hingga Cikampek."
+    items={[
+      {
+        title: 'Apakah jasa ini tersedia 24 jam di Karawang?',
+        description:
+          'Ya, saya melayani panggilan darurat untuk rumah tangga, restoran, dan pabrik di seluruh wilayah Kabupaten Karawang kapanpun dibutuhkan.',
+      },
+      {
+        title: 'Berapa lama proses pengerjaannya?',
+        description:
+          'Rata-rata pengerjaan berkisar antara 1 hingga 2 jam, tergantung tingkat kerumitan dan panjang pipa yang tersumbat.',
+      },
+      {
+        title: 'Apakah ada biaya tambahan transportasi?',
+        description:
+          'Untuk wilayah Karawang Kota, Klari, dan Telukjambe, biaya sudah termasuk transportasi. Untuk wilayah pelosok, akan dikonfirmasikan di awal.',
+      },
+      {
+        title: 'Apakah air bisa langsung digunakan setelah dicuci?',
+        description:
+          'Ya, setelah proses pencucian dan pembilasan selesai, air bersih dapat langsung digunakan kembali untuk aktivitas rumah tangga Anda.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Panggil Jasa Pipa Sekarang',
+        href: 'https://wa.me/628123456789012',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Saluran Pipa Mampet Bikin Pusing? <br /><span class="text-blue-600 dark:text-blue-400"
+        >Hubungi Ahli Saluran Karawang!</span
+      >
+    </Fragment>
+    <Fragment slot="subtitle">
+      Jangan biarkan rumah Anda bau dan kotor. Dapatkan solusi pelancaran pipa profesional dengan harga transparan.
+      **Garansi Nyata, No Lancar No Pay!**
+    </Fragment>
+  </CallToAction>
+</Layout>

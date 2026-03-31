@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-04-07T14:00:00Z
+publishDate: 2026-04-02T14:00:00Z
 title: 'Dampak Akar Pohon Merusak Jalur Pipa Bawah Tanah - Solusi Tanpa Bongkar'
 excerpt: 'Akar pohon masuk ke dalam pipa pembuangan rumah Anda? Pelajari bagaimana akar bisa merusak jalur pipa bawah tanah dan cara mengatasinya secara efektif menggunakan teknologi mekanik modern.'
 image: ~/assets/images/jasa-saluran-mampet.webp

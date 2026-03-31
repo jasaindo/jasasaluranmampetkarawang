@@ -6,10 +6,10 @@ export const headerData = {
     {
       text: 'Layanan Kami',
       links: [
-        { text: 'Wastafel Mampet', href: getPermalink('/services#wastafel') },
-        { text: 'Saluran Kamar Mandi', href: getPermalink('/services#kamar-mandi') },
-        { text: 'Sedot WC & Septic Tank', href: getPermalink('/services#sedot-wc') },
-        { text: 'Pipa Air Bersih', href: getPermalink('/services#pipa-air') },
+        { text: 'Wastafel Mampet', href: getPermalink('/pembersihan-wastafel') },
+        { text: 'Saluran Kamar Mandi', href: getPermalink('/services-kamar-mandi') },
+        { text: 'Sedot WC & Septic Tank', href: getPermalink('/services-sedot-wc') },
+        { text: 'Pipa Air Bersih', href: getPermalink('/services-pipa-air') },
       ],
     },
     {
