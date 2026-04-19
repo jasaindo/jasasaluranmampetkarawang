@@ -20,7 +20,7 @@ Memahami kondisi instalasi adalah kunci utama sebelum melakukan tindakan. Sering
 
 ## Reaksi Eksotermik: Musuh Utama Pipa Plastik
 
-Saat soda api bertemu dengan air, terjadi reaksi eksotermik yang menghasilkan panas luar biasa tinggi. Suhu yang dihasilkan dari reaksi ini seringkali melampaui titik toleransi panas pipa PVC standar (yang umumnya hanya mampu menahan suhu sekitar $60^\circ C$ hingga $80^\circ C$). Panas yang berlebihan ini menyebabkan dinding pipa melunak, berubah bentuk (*deformasi*), atau bahkan meleleh di titik-titik tertentu.
+Saat soda api bertemu dengan air, terjadi reaksi eksotermik yang menghasilkan panas luar biasa tinggi. Suhu yang dihasilkan dari reaksi ini seringkali melampaui titik toleransi panas pipa PVC standar atau bahkan meleleh di titik-titik tertentu.
 
 Efek ini tidak selalu terlihat seketika. Seringkali, pipa yang melunak akan mengendur dan menciptakan celah pada sambungan (*fitting*), yang kemudian memicu kebocoran di dalam dinding atau di bawah lantai. Jika hal ini terjadi pada area dapur, sisa makanan akan terjebak pada lekukan pipa yang cacat tersebut, mempercepat timbulnya [solusi wastafel dapur mampet lemak keras](https://jasasaluranmampetkarawang.my.id/blog/solusi-wastafel-dapur-mampet-lemak-keras/) yang semakin sulit dibersihkan dengan cara konvensional.
 
