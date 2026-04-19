@@ -74,11 +74,7 @@ export default defineConfig({
 
   // Konfigurasi Gambar Anti-Error (Remote Assets)
   image: {
-    remotePatterns: [
-      { protocol: 'https', hostname: 'plus.unsplash.com' },
-      { protocol: 'https', hostname: 'images.unsplash.com' },
-      { protocol: 'https', hostname: 'cdn.pixabay.com' },
-    ],
+    domains: ['cdn.pixabay.com', 'plus.unsplash.com', 'images.unsplash.com'],
   },
 
   markdown: {
