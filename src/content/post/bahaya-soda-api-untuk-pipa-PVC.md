@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-04-19T11:00:00Z
+publishDate: 2026-04-19T01:00:00Z
 title: 'Bahaya Soda Api untuk Pipa PVC - Risiko Kerusakan Fatal Saluran Air'
 excerpt: 'Penggunaan soda api sering dianggap solusi praktis untuk saluran mampet, namun risikonya terhadap pipa PVC sangat fatal. Pelajari reaksi eksotermik yang merusak instalasi Anda.'
 image: ~/assets/images/jasa-saluran-mampet.webp
