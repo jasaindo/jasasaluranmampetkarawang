@@ -12,14 +12,6 @@ export const headerData = {
         { text: 'Pipa Air Bersih', href: getPermalink('/services-pipa-air') },
       ],
     },
-    {
-      text: 'Area Karawang',
-      links: [
-        { text: 'Karawang Barat & Timur', href: getPermalink('/area-karawang-kota') },
-        { text: 'Cikampek & Klari', href: getPermalink('/area-cikampek-klari') },
-        { text: 'Telukjambe & Galuh Mas', href: getPermalink('/area-telukjambe') },
-      ],
-    },
     { text: 'Blog Edukasi', href: getBlogPermalink() },
   ],
   actions: [
@@ -38,32 +30,6 @@ export const footerData = {
       links: [
         { text: 'Ahli Saluran Mampet', href: getPermalink('/services') },
         { text: 'Pembersihan Pipa', href: getPermalink('/services') },
-      ],
-    },
-    {
-      title: 'Wilayah Karawang',
-      links: [
-        { text: 'Karawang Kota', href: getPermalink('/area-karawang-kota') },
-        { text: 'Klari', href: getPermalink('/jasa-saluran-mampet-klari-karawang') },
-        { text: 'Cikampek', href: getPermalink('/area-cikampek') },
-        { text: 'Telukjambe Timur', href: getPermalink('/area-telukjambe-timur') },
-        { text: 'Telukjambe Barat', href: getPermalink('/area-telukjambe-barat') },
-        { text: 'Purwasari', href: getPermalink('/area-purwasari') },
-        { text: 'Kotabaru', href: getPermalink('/area-kotabaru') },
-        { text: 'Majalaya', href: getPermalink('/area-majalaya') },
-        { text: 'Rengasdengklok', href: getPermalink('/area-rengasdengklok') },
-        { text: 'Jatisari', href: getPermalink('/area-jatisari') },
-        { text: 'Jatisari', href: getPermalink('/area-jatisari') },
-        { text: 'Ciampel', href: getPermalink('/area-ciampel-suryacipta') },
-        { text: 'Pangkalan', href: getPermalink('/area-pangkalan-loji') },
-        { text: 'Tegalwaru', href: getPermalink('/area-tegalwaru') },
-        { text: 'Lemahabang', href: getPermalink('/area-lemahabang-adas') },
-        { text: 'Tempuran', href: getPermalink('/area-tempuran') },
-        { text: 'Cilamaya Wetan', href: getPermalink('/area-cilamaya-wetan') },
-        { text: 'Cilamaya Kulon', href: getPermalink('/area-cilamaya-kulon') },
-        { text: 'Rawamerta', href: getPermalink('/area-rawamerta') },
-        { text: 'Pedes', href: getPermalink('/area-pedes') },
-        { text: 'Cibuaya', href: getPermalink('/area-cibuaya') },
       ],
     },
     {
