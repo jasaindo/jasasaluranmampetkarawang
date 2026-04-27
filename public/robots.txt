@@ -1,17 +1,12 @@
 User-agent: *
 Allow: /
-
-# Jangan biarkan Google mengindeks folder aset internal
 Disallow: /_astro/
 Disallow: /api/
 Disallow: /admin/
 Disallow: /node_modules/
-
-# Jangan biarkan Google mengindeks hasil pencarian (jika ada fitur search)
 Disallow: /search/
 Disallow: /search?*
 
-# Khusus untuk bot AI (Opsional: Jika tidak ingin konten dicolong bot AI)
 User-agent: GPTBot
 Disallow: /
 
