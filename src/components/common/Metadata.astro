@@ -14,24 +14,27 @@ export interface Props extends MetaData {
 const {
   title,
   ignoreTitleTemplate = false,
-  canonical = String(getCanonical(String(Astro.url.pathname))),
+  // PERBAIKAN: Jangan paksa getCanonical di sini, biarkan null dulu agar bisa di-merge
+  canonical: customCanonical, 
   robots = {},
   description,
   openGraph = {},
   twitter = {},
 } = Astro.props;
 
+// LOGIKA: Jika di Markdown (customCanonical) kosong, baru gunakan getCanonical otomatis
+const finalCanonical = String(customCanonical || getCanonical(String(Astro.url.pathname)));
+
 const seoProps: AstroSeoProps = merge(
   {
     title: '',
     titleTemplate: '%s',
-    canonical: canonical,
-    // PERBAIKAN: Set default ke FALSE agar gerbang terbuka secara global
+    canonical: finalCanonical,
     noindex: false, 
     nofollow: false,
     description: undefined,
     openGraph: {
-      url: canonical,
+      url: finalCanonical,
       site_name: SITE?.name,
       images: [],
       locale: I18N?.language || 'en',
@@ -44,7 +47,6 @@ const seoProps: AstroSeoProps = merge(
   {
     title: METADATA?.title?.default,
     titleTemplate: METADATA?.title?.template,
-    // Mengambil nilai kebalikan (!) dari config.yaml (index: true menjadi noindex: false)
     noindex: typeof METADATA?.robots?.index !== 'undefined' ? !METADATA.robots.index : undefined,
     nofollow: typeof METADATA?.robots?.follow !== 'undefined' ? !METADATA.robots.follow : undefined,
     description: METADATA?.description,
@@ -54,11 +56,11 @@ const seoProps: AstroSeoProps = merge(
   {
     title: title,
     titleTemplate: ignoreTitleTemplate ? '%s' : undefined,
-    canonical: canonical,
+    canonical: finalCanonical, // Prioritas terakhir dari props artikel
     noindex: typeof robots?.index !== 'undefined' ? !robots.index : undefined,
     nofollow: typeof robots?.follow !== 'undefined' ? !robots.follow : undefined,
     description: description,
-    openGraph: { url: canonical, ...openGraph },
+    openGraph: { url: finalCanonical, ...openGraph },
     twitter: twitter,
   }
 );

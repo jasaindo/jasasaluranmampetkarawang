@@ -54,7 +54,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     category: rawCategory,
     author,
     draft = false,
-    metadata = {},
+    metadata = {}, // Metadata dari frontmatter MD
   } = data;
 
   const slug = cleanSlug(id); 
@@ -73,10 +73,13 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     title: tag,
   }));
 
+  // Generate permalink utama
+  const permalink = await generatePermalink({ id, slug, publishDate, category: category?.slug });
+
   return {
     id: id,
     slug: slug,
-    permalink: await generatePermalink({ id, slug, publishDate, category: category?.slug }),
+    permalink: permalink,
 
     publishDate: publishDate,
     updateDate: updateDate,
@@ -91,7 +94,11 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
 
     draft: draft,
 
-    metadata,
+    // PERBAIKAN: Pastikan metadata membawa info canonical ke komponen Metadata.astro
+    metadata: {
+      ...metadata,
+      canonical: metadata?.canonical || undefined, 
+    },
 
     Content: Content,
     readingTime: remarkPluginFrontmatter?.readingTime,
@@ -102,15 +109,12 @@ const load = async function (): Promise<Array<Post>> {
   const posts = await getCollection('post');
   const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
 
-  // PERBAIKAN: Menambahkan filter Tanggal agar artikel masa depan tidak muncul
   const now = new Date();
 
   const results = (await Promise.all(normalizedPosts))
     .sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf())
     .filter((post) => {
-      // Artikel hanya muncul jika: 
-      // 1. Bukan Draft 
-      // 2. DAN Tanggal Publish <= Waktu sekarang (Build Time)
+      // Logic filter yang sudah Anda buat (sangat bagus!)
       return !post.draft && post.publishDate <= now;
     });
 
@@ -143,7 +147,7 @@ export const fetchPosts = async (): Promise<Array<Post>> => {
   return _posts;
 };
 
-/** Sisanya tetap sama sesuai kode asli Anda... */
+/** Fungsi pencarian dan path tetap sama... */
 export const findPostsBySlugs = async (slugs: Array<string>): Promise<Array<Post>> => {
   if (!Array.isArray(slugs)) return [];
   const posts = await fetchPosts();
@@ -193,7 +197,7 @@ export const getStaticPathsBlogPost = async () => {
 export const getStaticPathsBlogCategory = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogCategoryRouteEnabled) return [];
   const posts = await fetchPosts();
-  const categories = {};
+  const categories: Record<string, any> = {};
   posts.map((post) => {
     if (post.category?.slug) {
       categories[post.category?.slug] = post.category;
@@ -214,7 +218,7 @@ export const getStaticPathsBlogCategory = async ({ paginate }: { paginate: Pagin
 export const getStaticPathsBlogTag = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogTagRouteEnabled) return [];
   const posts = await fetchPosts();
-  const tags = {};
+  const tags: Record<string, any> = {};
   posts.map((post) => {
     if (Array.isArray(post.tags)) {
       post.tags.map((tag) => {
@@ -261,4 +265,4 @@ export async function getRelatedPosts(originalPost: Post, maxResults: number = 4
     i++;
   }
   return selectedPosts;
-}
+} 

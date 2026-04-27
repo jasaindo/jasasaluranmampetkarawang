@@ -43,21 +43,23 @@ const metadataDefinition = () =>
 
 const postCollection = defineCollection({
   loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/post' }),
-  schema: z.object({
-    publishDate: z.date().optional(),
-    updateDate: z.date().optional(),
-    draft: z.boolean().optional(),
+  schema: ({ image }) => // PERBAIKAN: Menggunakan fungsi image untuk optimasi aset
+    z.object({
+      publishDate: z.date().optional(),
+      updateDate: z.date().optional(),
+      draft: z.boolean().optional(),
 
-    title: z.string(),
-    excerpt: z.string().optional(),
-    image: z.string().optional(),
+      title: z.string(),
+      excerpt: z.string().optional(),
+      // PERBAIKAN: image() mendukung path lokal (~/assets) dan URL remote
+      image: image().optional(), 
 
-    category: z.string().optional(),
-    tags: z.array(z.string()).default([]), // Menggunakan default array kosong sesuai standar AstroWind
-    author: z.string().optional(),
+      category: z.string().optional(),
+      tags: z.array(z.string()).default([]), 
+      author: z.string().optional(),
 
-    metadata: metadataDefinition(),
-  }),
+      metadata: metadataDefinition(),
+    }),
 });
 
 export const collections = {
