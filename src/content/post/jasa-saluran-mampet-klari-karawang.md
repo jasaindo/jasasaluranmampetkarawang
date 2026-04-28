@@ -37,7 +37,7 @@ Saat tiba di lokasi Anda di **Klari**, tim kami akan melakukan langkah-langkah b
 
 Layanan kami bersifat panggil (home service) dan menjangkau seluruh kelurahan di **Klari**. Kami siap datang ke rumah tinggal, ruko, pabrik, rumah sakit, hingga sekolah yang membutuhkan normalisasi saluran pembuangan air kotor.
 
-*(Artikel ini disusun sebagai referensi resmi layanan saluran mampet untuk warga Klari Karawang).*
+[mitra terpercaya Anda untuk urusan pipa pembuangan](https://jasasaluranmampetkarawang.my.id/blog/jasa-saluran-mampet-karawang-terbaik/) 
 
 ## Tanya Jawab (F.A.Q) Mengenai Layanan Klari
 
