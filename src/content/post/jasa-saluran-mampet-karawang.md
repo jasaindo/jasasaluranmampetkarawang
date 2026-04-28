@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-04-28T14:00:00Z
+publishDate: 2026-04-27T14:00:00Z
 title: 'Jasa Saluran Mampet Karawang: Solusi Cepat & Garansi Tanpa Bongkar'
 excerpt: 'Layanan jasa saluran mampet Karawang profesional untuk atasi pipa tersumbat, WC mampet, dan drainase gedung. Gunakan teknologi modern, pengerjaan cepat, dan harga transparan.'
 image: ~/assets/images/jasa-saluran-mampet.webp
