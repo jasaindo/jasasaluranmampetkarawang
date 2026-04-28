@@ -32,9 +32,9 @@ export const footerData = {
       ],
     },
     {
-      title: 'Layanan Utama',
+      title: 'FAQ',
       links: [
-        { text: 'Ahli Saluran Mampet', href: getPermalink('/faq') },
+        { text: 'FAQ', href: getPermalink('/faq') },
       ],
     },
     {
