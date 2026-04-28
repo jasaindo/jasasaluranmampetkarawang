@@ -29,7 +29,12 @@ export const footerData = {
       title: 'Layanan Utama',
       links: [
         { text: 'Ahli Saluran Mampet', href: getPermalink('/services') },
-        { text: 'Pembersihan Pipa', href: getPermalink('/services') },
+      ],
+    },
+    {
+      title: 'Layanan Utama',
+      links: [
+        { text: 'Ahli Saluran Mampet', href: getPermalink('/faq') },
       ],
     },
     {

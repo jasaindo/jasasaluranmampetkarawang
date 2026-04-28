@@ -1,0 +1,88 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+
+const metadata = {
+  title: 'FAQ - Jasa Saluran Mampet Karawang | Tanya Jawab Layanan',
+  description: 'Pertanyaan seputar jasa saluran mampet Karawang. Informasi harga, garansi, teknologi rooter tanpa bongkar, dan area layanan 24 jam.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="FAQ"
+    title="Pertanyaan yang Sering Diajukan"
+    subtitle="Temukan jawaban cepat seputar solusi saluran air mampet, teknis pengerjaan, hingga estimasi biaya layanan kami di Karawang."
+  />
+
+  <FAQs
+    title="Informasi Layanan & Harga"
+    subtitle="Segala hal yang perlu Anda ketahui sebelum memanggil teknisi kami."
+    items={[
+      {
+        title: 'Berapa harga jasa saluran mampet di Karawang?',
+        description:
+          'Biaya jasa kami sangat kompetitif, mulai dari Rp300.000 tergantung tingkat kesulitan. Kami menerapkan sistem No Cure No Pay: Tanpa biaya jika saluran tidak berhasil dilancarkan.',
+      },
+      {
+        title: 'Di mana lokasi terdekat yang dijangkau layanan 24 jam?',
+        description:
+          'Tim kami siaga 24 jam untuk seluruh wilayah Karawang, meliputi Karawang Barat, Karawang Timur, Telukjambe (Galuh Mas), Klari, Cikampek, hingga kawasan industri KIIC dan Suryacipta.',
+      },
+      {
+        title: 'Apakah pengerjaan ini harus membongkar lantai atau tembok?',
+        description:
+          'Sama sekali tidak. Kami menggunakan teknologi Spiral Cable (Rooter) dan Hydro Jetting yang membersihkan pipa dari dalam tanpa merusak keramik atau struktur bangunan Anda.',
+      },
+      {
+        title: 'Berapa lama proses pengerjaannya?',
+        description:
+          'Untuk masalah standar rumah tangga seperti wastafel atau floor drain mampet, proses rata-rata hanya memakan waktu 1-2 jam.',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="Teknis & Keamanan Pipa"
+    subtitle="Kami mengutamakan integritas instalasi pipa Anda menggunakan metode modern."
+    items={[
+      {
+        title: 'Mengapa penggunaan soda api sangat tidak disarankan?',
+        description:
+          'Soda api memicu reaksi panas ekstrem yang bisa membuat pipa PVC melunak, melengkung, atau bahkan pecah di dalam tanah. Pembersihan mekanik jauh lebih aman dan permanen.',
+      },
+      {
+        title: 'Apa itu saponifikasi yang sering menyebabkan mampet?',
+        description:
+          'Saponifikasi adalah proses pengerasan lemak dan sisa minyak dapur yang mendingin di dalam pipa, lalu berubah menjadi kerak putih sekeras batu yang menutup aliran air.',
+      },
+      {
+        title: 'Apakah kabel spiral berisiko merusak pipa PVC?',
+        description:
+          'Tidak. Kabel spiral kami sangat fleksibel dan didesain khusus untuk meliuk mengikuti alur pipa tanpa mengikis dinding pipa, sehingga sangat aman untuk semua jenis material pipa.',
+      },
+      {
+        title: 'Bagaimana jika sumbatan disebabkan oleh akar pohon?',
+        description:
+          'Kami menggunakan mata pisau khusus (cutter head) yang mampu memotong akar pohon di dalam pipa secara mekanis tanpa perlu melakukan penggalian.',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="Garansi & Layanan Lain"
+    items={[
+      {
+        title: 'Apakah ada garansi jika saluran mampet kembali?',
+        description:
+          'Ya, kami memberikan jaminan pekerjaan. Jika terjadi mampet di titik yang sama dalam masa garansi, tim kami akan datang kembali untuk pengecekan ulang secara gratis.',
+      },
+      {
+        title: 'Apakah layanan ini juga mencakup kuras septic tank?',
+        description:
+          'Ya, kami juga melayani sedot tinja dan kuras septic tank. Teknisi kami akan mendiagnosa apakah masalahnya ada di pipa yang mampet atau tangki yang sudah penuh.',
+      },
+    ]}
+  />
+</Layout>

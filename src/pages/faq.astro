@@ -8,7 +8,7 @@ import Features3 from '~/components/widgets/Features3.astro';
 const metadata = {
   title: 'Pusat Bantuan & FAQ - Ahli Saluran Mampet Karawang',
   description:
-    'Temukan jawaban cepat mengenai biaya jasa, metode pengerjaan tanpa bongkar, durasi servis, hingga garansi layanan saluran mampet di Karawang.',
+    'Temukan jawaban lengkap mengenai biaya jasa, metode rooter tanpa bongkar, durasi servis, bahaya soda api, hingga garansi layanan di wilayah Karawang.',
   canonical: 'https://jasasaluranmampetkarawang.my.id/faq',
 };
 ---
@@ -18,95 +18,129 @@ const metadata = {
   <HeroText
     tagline="Pusat Bantuan"
     title="Pertanyaan Sering Diajukan (FAQ)"
-    subtitle="Jawaban jujur dan transparan berdasarkan pengalaman lapangan selama 10 tahun menangani saluran mampet di wilayah Karawang."
+    subtitle="Jawaban jujur, transparan, dan teknis berdasarkan pengalaman lapangan menangani ribuan kasus saluran mampet di Karawang."
   />
 
-  {/* FAQ Utama: Biaya & Metode */}
+  {/* FAQ Utama: Biaya & Kepercayaan */}
   <FAQs
-    title="Biaya & Metode Pengerjaan"
+    title="Biaya & Jaminan Layanan"
+    subtitle="Kami mengedepankan transparansi agar Anda merasa aman dan nyaman."
     items={[
       {
         title: 'Berapa biaya jasa saluran mampet di Karawang?',
         description:
-          'Harga bervariasi tergantung jenis sumbatan. Kami menggunakan sistem **Flat Rate per Titik** sesuai kesepakatan di awal, bukan sistem per meter yang menjebak.',
-      },
-      {
-        title: 'Apakah ada biaya kunjungan jika pengerjaan batal?',
-        description:
-          'Jika teknisi sudah sampai di lokasi (seperti Cikampek/Rengasdengklok) namun dibatalkan sepihak, kami hanya mengenakan biaya transportasi minimal.',
+          'Biaya kompetitif mulai dari **Rp300.000** tergantung tingkat kesulitan. Kami menggunakan sistem **Flat Rate per Titik**, bukan per meter yang menjebak. Estimasi final diberikan setelah inspeksi awal.',
       },
       {
         title: '"No Lancar, No Pay" — Apakah benar?',
         description:
-          'Betul. Jika peralatan canggih kami gagal melancarkan saluran Anda karena keterbatasan teknis kami, Anda **GRATIS** biaya jasa.',
+          'Betul. Jika peralatan modern kami (Rooter/Hydro Jetting) gagal melancarkan saluran Anda karena keterbatasan teknis kami, Anda **GRATIS** biaya jasa (hanya biaya transport jika lokasi jauh).',
       },
       {
-        title: 'Apa yang dimaksud dengan "Tanpa Bongkar"?',
+        title: 'Apakah ada garansi jika saluran mampet kembali?',
         description:
-          'Kami menggunakan mesin **Spiral Rooter** atau **Hydro Jetting** untuk menghancurkan kotoran dari dalam pipa tanpa merusak lantai keramik atau semen rumah Anda.',
+          'Ya, kami memberikan **Garansi Pengerjaan**. Jika terjadi penyumbatan kembali di titik yang sama dalam masa garansi, tim kami akan datang melakukan pengecekan dan pelancaran ulang secara **gratis**.',
       },
     ]}
   />
 
-  {/* Content Section: Masalah Spesifik (E-E-A-T) */}
+  {/* Content Section: Edukasi Teknis (E-E-A-T) */}
   <Content
     isReversed
     items={[
       {
         title: 'Waspada Bahaya Soda Api',
         description:
-          'Penggunaan soda api berlebih bisa merusak pipa (deformasi) dan mengeraskan lemak menjadi seperti semen. Segera hubungi kami sebelum pipa rusak permanen.',
+          'Reaksi panas ekstrem soda api dapat membuat pipa PVC melunak, melengkung, atau pecah di dalam tanah. Biaya bongkar pipa bocor jauh lebih mahal daripada jasa pelancaran profesional.',
         icon: 'tabler:alert-triangle',
       },
       {
-        title: 'Beda Septic Tank vs Saluran Mampet',
+        title: 'Mengenal Saponifikasi Lemak',
         description:
-          'Jika septic tank kosong tapi air tetap meluap, berarti ada sumbatan di jalur pipa. Jasa sedot tinja tidak bisa mengatasi ini, namun Ahli Saluran Mampet bisa.',
-        icon: 'tabler:tool',
+          'Sisa minyak dapur yang mendingin akan mengeras menjadi kerak sekeras batu (saponifikasi). Hanya metode mekanik Spiral Rooter yang efektif menghancurkannya tanpa merusak pipa.',
+        icon: 'tabler:flask',
+      },
+      {
+        title: 'Beda Septic Tank vs Pipa Mampet',
+        description:
+          'Jika septic tank masih kosong tapi WC meluap, masalahnya ada pada pipa. Kami membantu mendiagnosa apakah Anda butuh pelancaran pipa atau sekadar sedot tinja.',
+        icon: 'tabler:adjustments-check',
       },
     ]}
     image={{
       src: '~/assets/images/layanan-saluran-mampet.webp',
-      alt: 'Teknisi Saluran Mampet Karawang',
+      alt: 'Teknisi Saluran Mampet Karawang Profesional',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Analisis Teknis Spesifik</h3>
-      Solusi tepat sasaran untuk warga Grand Taruma hingga pengelola pabrik di KIIC.
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Analisis & Keamanan Pipa</h3>
+      Kami menjamin integritas instalasi pipa Anda menggunakan standar pengerjaan modern.
     </Fragment>
   </Content>
 
+  {/* FAQ Teknis: Metode & Keamanan */}
+  <FAQs
+    title="Metode Pengerjaan Tanpa Bongkar"
+    subtitle="Mengapa teknologi kami lebih unggul dari metode manual biasa?"
+    items={[
+      {
+        title: 'Apa yang dimaksud dengan "Tanpa Bongkar"?',
+        description:
+          'Kami menggunakan mesin **Spiral Rooter** bertenaga motor yang meliuk di dalam pipa mengikuti sambungan (elbow) untuk menghancurkan sumbatan tanpa memecah keramik atau menggali lantai.',
+      },
+      {
+        title: 'Berapa lama proses pengerjaan pelancaran pipa?',
+        description:
+          'Untuk masalah standar seperti wastafel atau floor drain, pengerjaan biasanya selesai dalam **1-2 jam** saja, tergantung panjang jalur pipa.',
+      },
+      {
+        title: 'Apakah kabel spiral berisiko merusak pipa PVC?',
+        description:
+          'Tidak. Kabel spiral kami didesain fleksibel untuk meliuk tanpa mengikis dinding pipa PVC. Ini jauh lebih aman dibanding menggunakan tongkat besi atau bambu yang kaku.',
+      },
+      {
+        title: 'Bagaimana jika sumbatan disebabkan oleh akar pohon?',
+        description:
+          'Kami menggunakan mata pisau khusus (*cutter head*) yang mampu memotong akar pohon di dalam pipa secara mekanis tanpa perlu melakukan penggalian.',
+      },
+    ]}
+  />
+
   {/* Jangkauan Wilayah */}
   <Features3
-    title="Cakupan Layanan Karawang"
-    subtitle="Kami standby 24 jam untuk merespon panggilan darurat di titik-titik strategis."
+    title="Cakupan Area Karawang"
+    subtitle="Layanan Emergency 24 Jam untuk pemukiman, ruko, hingga kawasan industri."
     columns={3}
     items={[
       {
-        title: 'Karawang Pusat',
-        description: 'Nagasari, Tanjungpura, Karawang Pawitan, Galuh Mas.',
+        title: 'Karawang Kota',
+        description: 'Galuh Mas, Nagasari, Tanjungpura, Resinda, Grand Taruma.',
         icon: 'tabler:map-pin',
       },
       {
-        title: 'Telukjambe & KIIC',
-        description: 'Sukaluyu, Perumnas, Kawasan Industri KIIC & Suryacipta.',
+        title: 'Telukjambe & Kawasan',
+        description: 'Perumnas, KIIC, Suryacipta, KIM, hingga Telukjambe Barat.',
         icon: 'tabler:building-factory',
       },
       {
-        title: 'Cikampek & Klari',
-        description: 'Pancawati, Kosambi, Curug, Purwasari, hingga Jatisari.',
+        title: 'Cikampek & Timur',
+        description: 'Klari, Kosambi, Cikampek, Jatisari, hingga Rengasdengklok.',
         icon: 'tabler:truck',
       },
     ]}
   />
 
-  {/* Call to Action Utama */}
+  {/* Akhir FAQ & Kontak */}
   <FAQs
-    title="Masih butuh bantuan?"
+    title="Layanan Darurat & Operasional"
     items={[
       {
         title: 'Apakah melayani panggilan 24 Jam?',
-        description: 'Benar. Tim kami siap merespon luapan air darurat di malam hari atau hari libur sekalipun.',
+        description: 'Benar. Kami siaga merespon luapan air darurat di malam hari, hari libur, atau tanggal merah sekalipun demi kenyamanan hunian Anda.',
+      },
+      {
+        title: 'Apakah air kotor akan dibersihkan setelah pengerjaan?',
+        description: 'Teknisi kami bekerja dengan standar kebersihan tinggi untuk meminimalisir ceceran air kotor dan memastikan area kerja kembali rapi.',
       },
     ]}
   >
